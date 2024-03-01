@@ -1,0 +1,9 @@
+﻿<Application x:Class="Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz"
+             StartupUri="/mvvm/view/login.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
