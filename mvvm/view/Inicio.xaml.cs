@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Inicio.xaml
     /// </summary>
-    public partial class dashboard : Window
+    public partial class Inicio : UserControl
     {
-        public dashboard()
+        public Inicio()
         {
             InitializeComponent();
         }

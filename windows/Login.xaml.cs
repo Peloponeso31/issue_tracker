@@ -21,18 +21,17 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
     /// <summary>
     /// Interaction logic for login.xaml
     /// </summary>
-    /// 
 
-    public partial class login : Window
+    public partial class Login : Window
     {
-        public login()
+        public Login()
         {
             InitializeComponent();
         }
 
         private void autenticar_click(object sender, RoutedEventArgs e)
         {
-            var dashboard = new dashboard();
+            var dashboard = new Dashboard();
             string email_str = email.Text.ToString();
             string password_str = password.Password.ToString();
             dashboard.Show();
