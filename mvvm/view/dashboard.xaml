@@ -10,28 +10,33 @@
         MinWidth="1024"
         MinHeight="768">
     <Border Background="#fff">
-        <Grid Margin="10,0,-10,0">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200">
-
-                </ColumnDefinition>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="75">
-
-                </RowDefinition>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">
-                Dashboard
-            </TextBlock>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="0" Background="#2f3338">
+                <Image Width="180">
+                    <Image.Source>
+                        <BitmapImage UriSource="/media/images/logo_letras.png"/>
+                    </Image.Source>
+                </Image>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Background="#2f3338">
 
             </StackPanel>
 
-
+            <StackPanel Grid.Row="1" Grid.Column="1" Background="#e9eff5">
+                
+            </StackPanel>
 
         </Grid>
     </Border>
