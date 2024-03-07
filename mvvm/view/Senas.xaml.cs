@@ -43,7 +43,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
             Color colorPixel = ObtenerColorPixel(x, y);
 
             //Mostrar valores
-            text1.Content = ("Color RGB en las coordenadas (" + x + ", " + y + "): " + colorPixel.R + ", " + colorPixel.G + ", " + colorPixel.B);
+            text1.Content = ("Coordenadas: (" + x + ", " + y + ") " + " RGB: " + colorPixel.R + ", " + colorPixel.G + ", " + colorPixel.B);
         }
 
         private Color ObtenerColorPixel(int x, int y)

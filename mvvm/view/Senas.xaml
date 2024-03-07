@@ -4,14 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="683" Width="1246">
     <Grid>
-        <Image x:Name="imageColorMap" HorizontalAlignment="Left" Height="219" Margin="31,55,0,0" VerticalAlignment="Top" Width="200" Source="/media/images/senas/RegionCuerpoColorMejorado.png"/>
-        <Image x:Name="imageSide" HorizontalAlignment="Left" Height="219" Margin="31,55,0,0" VerticalAlignment="Top" Width="200" Source="/media/images/senas/Cuerpo MapingSide.png"/>
-        <Image x:Name="imageUnix" HorizontalAlignment="Left" Height="220" Margin="31,55,0,0" VerticalAlignment="Top" Width="200" Source="/media/images/senas/CuerpoUNIXMejorado.png" MouseLeftButtonDown="image_userIn"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="247,59,0,0" TextWrapping="Wrap" Text="Region del cuerpo" VerticalAlignment="Top" Width="150" IsReadOnly="True"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="247,82,0,0" VerticalAlignment="Top" Width="150" MouseLeftButtonDown="ComboBox1_Clic">
+        <Label x:Name="text1" Content="Label" HorizontalAlignment="Left" Margin="31,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.7,-1.93"/>
+        <Image x:Name="imageColorMap" HorizontalAlignment="Left" Height="612" Margin="31,35,0,0" VerticalAlignment="Top" Width="558" Source="/mvvm/view/RegionCuerpoColorMejorado.png"/>
+        <Image x:Name="imageSide" HorizontalAlignment="Left" Height="612" Margin="31,35,0,0" VerticalAlignment="Top" Width="558" Source="/media/images/senas/Cuerpo MapingSide.png" Stretch="None"/>
+        <Image x:Name="imageUnix" HorizontalAlignment="Left" Height="612" Margin="31,35,0,0" VerticalAlignment="Top" Width="558" Source="/media/images/senas/CuerpoUNIXMejorado.png" MouseLeftButtonDown="image_userIn"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="623,41,0,0" TextWrapping="Wrap" Text="Region del cuerpo" VerticalAlignment="Top" Width="257" IsReadOnly="True"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="623,64,0,0" VerticalAlignment="Top" Width="257" MouseLeftButtonDown="ComboBox1_Clic">
             <ComboBoxItem Content="Tipo"/>
             <ComboBoxItem Content="ARETE/PERFORACIONES"/>
             <ComboBoxItem Content="CICATRIZ"/>
@@ -24,20 +24,20 @@
             <ComboBoxItem Content="TATUAJE"/>
             <ComboBoxItem Content="OTRO"/>
         </ComboBox>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="247,109,0,0" VerticalAlignment="Top" Width="150" MouseLeftButtonDown="ComboBox2_Clic">
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="623,91,0,0" VerticalAlignment="Top" Width="257" MouseLeftButtonDown="ComboBox2_Clic">
             <ComboBoxItem Content="Lado"/>
             <ComboBoxItem Content="DERECHO"/>
             <ComboBoxItem Content="IZQUIERDO"/>
             <ComboBoxItem Content="NO ESPECIFICA"/>
             <ComboBoxItem Content="UNICO"/>
         </ComboBox>
-        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="247,136,0,0" VerticalAlignment="Top" Width="150" MouseLeftButtonDown="ComboBox3_Clic">
+        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="623,118,0,0" VerticalAlignment="Top" Width="257" MouseLeftButtonDown="ComboBox3_Clic">
             <ComboBoxItem Content="Vista"/>
             <ComboBoxItem Content="DORSAL"/>
             <ComboBoxItem Content="FRONTAL"/>
             <ComboBoxItem Content="NO ESPECIFICA"/>
         </ComboBox>
-        <ComboBox x:Name="comboBox4" HorizontalAlignment="Left" Margin="247,163,0,0" VerticalAlignment="Top" Width="150" MouseLeftButtonDown="ComboBox4_Clic">
+        <ComboBox x:Name="comboBox4" HorizontalAlignment="Left" Margin="623,145,0,0" VerticalAlignment="Top" Width="257" MouseLeftButtonDown="ComboBox4_Clic">
             <ComboBoxItem Content="Cantidad"/>
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
@@ -49,17 +49,17 @@
             <ComboBoxItem Content="8"/>
             <ComboBoxItem Content="9"/>
         </ComboBox>
-        <RichTextBox x:Name="richtextBox1" Margin="247,190,243,206" MouseLeftButtonDown="richText1_Clic">
+        <RichTextBox x:Name="richtextBox1" Margin="623,174,366,403" MouseLeftButtonDown="richText1_Clic">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="Descripcion"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Image x:Name="pictureBox4" HorizontalAlignment="Left" Height="169" Margin="411,55,0,0" VerticalAlignment="Top" Width="200" Source="/mvvm/view/Minus loadIcon.png" MouseLeftButtonDown="image_userSelect"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="411,240,0,0" VerticalAlignment="Top" Width="86" Height="34"/>
-        <Button Content="Borrar" HorizontalAlignment="Left" Margin="524,240,0,0" VerticalAlignment="Top" Width="86" Height="34"/>
-        <DataGrid x:Name="dataGridView1" d:ItemsSource="{d:SampleData ItemCount=1}" Margin="18,295,19,35" Height="150" AutoGenerateColumns="False">
+        <Image x:Name="pictureBox4" HorizontalAlignment="Left" Height="169" Margin="971,50,0,0" VerticalAlignment="Top" Width="200" Source="/mvvm/view/Minus loadIcon.png" MouseLeftButtonDown="image_userSelect"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="971,246,0,0" VerticalAlignment="Top" Width="86" Height="34"/>
+        <Button Content="Borrar" HorizontalAlignment="Left" Margin="1084,246,0,0" VerticalAlignment="Top" Width="86" Height="34"/>
+        <DataGrid x:Name="dataGridView1" d:ItemsSource="{d:SampleData ItemCount=1}" Margin="623,341,31,36" AutoGenerateColumns="False" Width="592">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="No."/>
                 <DataGridTextColumn Header="Region del cuerpo"/>
@@ -72,6 +72,5 @@
                 <DataGridTextColumn Header="Coordenadas"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="text1" Content="Label" HorizontalAlignment="Left" Margin="31,24,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
