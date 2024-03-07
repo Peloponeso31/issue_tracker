@@ -12,9 +12,11 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
     {
         public RelayCommand InicioRelayCommand { get; set; }
         public RelayCommand BusquedaRelayCommand { get; set; }
+        public RelayCommand SenasParticularesCommand { get; set; }
 
         public InicioViewModel PantallaInicio{ get; set; }
 		public BusquedaViewModel PantallaBusqueda { get; set; }
+		public SenasParticularesViewModel PantallaSenasParticulares { get; set; }
 
         private object _currentView;
 
@@ -31,6 +33,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 		{
 			PantallaInicio = new InicioViewModel();
 			PantallaBusqueda = new BusquedaViewModel();
+			PantallaSenasParticulares = new SenasParticularesViewModel();
 
 			CurrentView = PantallaInicio;
 
@@ -41,6 +44,10 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
             BusquedaRelayCommand = new RelayCommand(o => {
                 CurrentView = PantallaBusqueda;
             });
+
+			SenasParticularesCommand = new RelayCommand(o => {
+				CurrentView = PantallaSenasParticulares;
+			});
         }
 	}
 }

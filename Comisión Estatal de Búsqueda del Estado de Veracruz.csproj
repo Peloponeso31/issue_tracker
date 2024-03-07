@@ -9,6 +9,8 @@
   <ItemGroup>
     <None Remove="media\images\logo_letras_blancas.png" />
     <None Remove="media\images\logo_letras_blancas_sm.png" />
+    <None Remove="media\images\senas\CuerpoUNIXMejorado.png" />
+    <None Remove="mvvm\view\Minus loadIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
@@ -17,6 +19,8 @@
     <Resource Include="media\images\logo_letras.png" />
     <Resource Include="media\images\logo_letras_blancas.png" />
     <Resource Include="media\images\logo_letras_blancas_sm.png" />
+    <Resource Include="media\images\senas\CuerpoUNIXMejorado.png" />
+    <Resource Include="mvvm\view\Minus loadIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />

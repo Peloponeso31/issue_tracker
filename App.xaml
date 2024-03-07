@@ -10,7 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/themes/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            
+
             <DataTemplate DataType="{x:Type viewModel:InicioViewModel}">
                 <view:Inicio/>
             </DataTemplate>
@@ -19,8 +19,10 @@
                 <view:Busqueda/>
             </DataTemplate>
 
-        </ResourceDictionary>
+            <DataTemplate DataType="{x:Type viewModel:SenasParticularesViewModel}">
+                <view:Senas/>
+            </DataTemplate>
 
-         
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

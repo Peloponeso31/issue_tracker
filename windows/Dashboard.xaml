@@ -70,6 +70,13 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
 
+                <RadioButton Content="Señas particulares"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Command="{Binding SenasParticularesCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Background="#e9eff5">
