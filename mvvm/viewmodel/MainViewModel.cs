@@ -22,8 +22,8 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 		{
 			get { return _currentView; }
 			set {
-				OnPropertyChanged();
 				this._currentView = value;
+				OnPropertyChanged();
 			}
 		}
 

@@ -29,11 +29,16 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
             InitializeComponent();
         }
 
-        private void autenticar_click(object sender, RoutedEventArgs e)
+        private async void autenticar_click(object sender, RoutedEventArgs e)
         {
             var dashboard = new Dashboard();
             string email_str = email.Text.ToString();
             string password_str = password.Password.ToString();
+
+            //using HttpResponseMessage response = await model.HttpClientHandler.sharedClient();
+
+            Console.WriteLine();
+
             dashboard.Show();
             this.Close();
         }

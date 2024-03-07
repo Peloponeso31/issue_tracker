@@ -10,9 +10,11 @@
         Background="Transparent"
         MinWidth="1024"
         MinHeight="768" Width="658">
+    
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
+    
     <Border Background="#fff">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -38,8 +40,8 @@
                 <TextBlock FontSize="10" 
                            FontWeight="Bold" 
                            Foreground="White" 
-                           Margin="30,0,0,0"> 
-                    Opciones 
+                           Margin="30,5,5,5"> 
+                    Opciones: 
                 </TextBlock>
                 <RadioButton Content="Inicio"
                              Height="50"
@@ -57,6 +59,12 @@
                              Style="{StaticResource MenuButtonTheme}"/>
 
                 <RadioButton Content="Captura"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                
+                <RadioButton Content="Reportes de desaparición"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
