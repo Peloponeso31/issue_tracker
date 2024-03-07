@@ -60,6 +60,7 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
+                             Command="{Binding CapturaRelayCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
 
             </StackPanel>
