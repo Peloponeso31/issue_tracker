@@ -14,46 +14,52 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         public RelayCommand BusquedaRelayCommand { get; set; }
         public RelayCommand SenasParticularesCommand { get; set; }
         public RelayCommand CapturaRelayCommand { get; set; }
-        
+
         public InicioViewModel PantallaInicio { get; set; }
         public BusquedaViewModel PantallaBusqueda { get; set; }
-        public SenasParticularesViewModel PantallaSenasParticulares { get; set; }        
+        public SenasParticularesViewModel PantallaSenasParticulares { get; set; }
         public CapturaViewModel PantallaCaptura { get; set; }
 
         private object _currentView;
 
-		public object CurrentView
-		{
-			get { return _currentView; }
-			set {
-				this._currentView = value;
-				OnPropertyChanged();
-			}
-		}
+        public object CurrentView
+        {
+            get { return _currentView; }
+            set
+            {
+                this._currentView = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public MainViewModel()
-		{
-			  PantallaInicio = new InicioViewModel();
-			  PantallaBusqueda = new BusquedaViewModel();
-        PantallaCaptura = new CapturaViewModel();
-        PantallaSenasParticulares = new SenasParticularesViewModel();
+        public MainViewModel()
+        {
+            PantallaInicio = new InicioViewModel();
+            PantallaBusqueda = new BusquedaViewModel();
+            PantallaCaptura = new CapturaViewModel();
+            PantallaSenasParticulares = new SenasParticularesViewModel();
 
-			  CurrentView = PantallaInicio;
-
-        InicioRelayCommand = new RelayCommand(o => {
             CurrentView = PantallaInicio;
-        });
 
-        BusquedaRelayCommand = new RelayCommand(o => {
-            CurrentView = PantallaBusqueda;
-        });
-            
-        SenasParticularesCommand = new RelayCommand(o => {
-				    CurrentView = PantallaSenasParticulares;
-			  });
-            
-        CapturaRelayCommand = new RelayCommand(o => {
-            CurrentView = PantallaCaptura;
-        });
+            InicioRelayCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaInicio;
+            });
+
+            BusquedaRelayCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaBusqueda;
+            });
+
+            SenasParticularesCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaSenasParticulares;
+            });
+
+            CapturaRelayCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaCaptura;
+            });
+        }
     }
 }

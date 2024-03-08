@@ -24,13 +24,14 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             var jsonResponse = await response.Content.ReadAsStringAsync();
             var request = response.RequestMessage;
 
+            Debug.WriteLine((int)response.StatusCode);
             Debug.WriteLine(request.RequestUri);
 
             switch ((int)response.StatusCode)
             {
                 case 200:
+                    Debug.WriteLine(jsonResponse);
                     requestObjects.Token token = JsonSerializer.Deserialize<requestObjects.Token>(jsonResponse)!;
-                    Debug.WriteLine(token.plainTextToken);
                     sharedClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.plainTextToken);
                     HttpResponseMessage authResponse = await sharedClient.GetAsync("user");
                     jsonResponse = await authResponse.Content.ReadAsStringAsync();
