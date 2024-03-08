@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects
 {
-    internal class Token
+    public class Token
     {
-        public string plainTextToken { get; set; }
+        public string? plainTextToken { get; set; }
     }
 }

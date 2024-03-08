@@ -12,17 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class Dashboard : Window
     {
-        public Dashboard()
+        private User usuarioAutenticado;
+        public Dashboard(User usuario)
         {
             InitializeComponent();
+            this.usuarioAutenticado = usuario;
+
+            this.NombreUsuario.Text = this.usuarioAutenticado.name;
         }
     }
 }
