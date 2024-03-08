@@ -1,5 +1,4 @@
-﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -15,8 +14,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
 {
     /// <summary>
     /// Interaction logic for login.xaml
@@ -31,16 +34,23 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 
         private async void autenticar_click(object sender, RoutedEventArgs e)
         {
-            var dashboard = new Dashboard();
             string email_str = email.Text.ToString();
             string password_str = password.Password.ToString();
 
-            //using HttpResponseMessage response = await model.HttpClientHandler.sharedClient();
+            var resultado = await core.HttpClientHandler.GetTokenRequest(email_str, password_str);
 
-            Console.WriteLine();
-
-            dashboard.Show();
-            this.Close();
+            if (resultado.GetType() == typeof(User))
+            {
+                var dashboard = new Dashboard((User)resultado);
+                dashboard.Show();
+                this.Close();
+            }
+            else if (resultado.GetType() == typeof(errorValidacion))
+            {
+                errorValidacion error = (errorValidacion)resultado;
+                this.MensajeDeError.Text = error.error;
+                this.MensajeDeError.Visibility = Visibility.Visible;
+            }
         }
 
     }

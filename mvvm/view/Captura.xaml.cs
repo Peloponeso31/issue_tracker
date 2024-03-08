@@ -12,22 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para Captura.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class Captura : UserControl
     {
-        private User usuarioAutenticado;
-        public Dashboard(User usuario)
+        public Captura()
         {
             InitializeComponent();
-            this.usuarioAutenticado = usuario;
+        }
 
-            this.NombreUsuario.Text = this.usuarioAutenticado.name;
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -21,6 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="mvvm\model\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="media\images\logo_letras.png" />

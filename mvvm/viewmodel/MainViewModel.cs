@@ -1,4 +1,4 @@
-﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view;
 using System;
 using System.Collections.Generic;
@@ -13,10 +13,12 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         public RelayCommand InicioRelayCommand { get; set; }
         public RelayCommand BusquedaRelayCommand { get; set; }
         public RelayCommand SenasParticularesCommand { get; set; }
-
-        public InicioViewModel PantallaInicio{ get; set; }
-		public BusquedaViewModel PantallaBusqueda { get; set; }
-		public SenasParticularesViewModel PantallaSenasParticulares { get; set; }
+        public RelayCommand CapturaRelayCommand { get; set; }
+        
+        public InicioViewModel PantallaInicio { get; set; }
+        public BusquedaViewModel PantallaBusqueda { get; set; }
+        public SenasParticularesViewModel PantallaSenasParticulares { get; set; }        
+        public CapturaViewModel PantallaCaptura { get; set; }
 
         private object _currentView;
 
@@ -31,23 +33,27 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 
 		public MainViewModel()
 		{
-			PantallaInicio = new InicioViewModel();
-			PantallaBusqueda = new BusquedaViewModel();
-			PantallaSenasParticulares = new SenasParticularesViewModel();
+			  PantallaInicio = new InicioViewModel();
+			  PantallaBusqueda = new BusquedaViewModel();
+        PantallaCaptura = new CapturaViewModel();
+        PantallaSenasParticulares = new SenasParticularesViewModel();
 
-			CurrentView = PantallaInicio;
+			  CurrentView = PantallaInicio;
 
-            InicioRelayCommand = new RelayCommand(o => {
-                CurrentView = PantallaInicio;
-            });
+        InicioRelayCommand = new RelayCommand(o => {
+            CurrentView = PantallaInicio;
+        });
 
-            BusquedaRelayCommand = new RelayCommand(o => {
-                CurrentView = PantallaBusqueda;
-            });
-
-			SenasParticularesCommand = new RelayCommand(o => {
-				CurrentView = PantallaSenasParticulares;
-			});
-        }
-	}
+        BusquedaRelayCommand = new RelayCommand(o => {
+            CurrentView = PantallaBusqueda;
+        });
+            
+        SenasParticularesCommand = new RelayCommand(o => {
+				    CurrentView = PantallaSenasParticulares;
+			  });
+            
+        CapturaRelayCommand = new RelayCommand(o => {
+            CurrentView = PantallaCaptura;
+        });
+    }
 }
