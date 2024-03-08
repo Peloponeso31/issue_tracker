@@ -11,8 +11,6 @@
                 <ResourceDictionary Source="/themes/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            
-
             <DataTemplate DataType="{x:Type viewModel:InicioViewModel}">
                 <view:Inicio/>
             </DataTemplate>
@@ -20,14 +18,14 @@
             <DataTemplate DataType="{x:Type viewModel:BusquedaViewModel}">
                 <view:Busqueda/>
             </DataTemplate>
-
+          
+            <DataTemplate DataType="{x:Type viewModel:SenasParticularesViewModel}">
+                <view:Senas/>
+            </DataTemplate>
+          
             <DataTemplate DataType="{x:Type viewModel:CapturaViewModel}">
                 <view:Captura/>
             </DataTemplate>
-
-
         </ResourceDictionary>
-
-         
     </Application.Resources>
 </Application>
