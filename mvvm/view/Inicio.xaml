@@ -7,14 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Background="White" Padding="20" CornerRadius="10">
-        <StackPanel>
-            <TextBlock Foreground="Black" FontSize="22">
-                Pantalla de inicio del dashboard.
-            </TextBlock>
-
-            <TextBlock Foreground="Black" FontSize="12" TextWrapping="Wrap">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et sollicitudin ac orci phasellus egestas tellus rutrum. Aliquet nec ullamcorper sit amet. Id donec ultrices tincidunt arcu. Mauris ultrices eros in cursus. Gravida arcu ac tortor dignissim convallis aenean. Cras semper auctor neque vitae tempus quam. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Vel fringilla est ullamcorper eget nulla. Ultrices dui sapien eget mi proin sed. Morbi tincidunt ornare massa eget egestas purus. Scelerisque fermentum dui faucibus in ornare. Aliquet eget sit amet tellus cras adipiscing. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Elementum integer enim neque volutpat. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Suspendisse sed nisi lacus sed viverra tellus in hac. At augue eget arcu dictum varius duis at. Erat pellentesque adipiscing commodo elit at imperdiet dui.
-            </TextBlock>
-        </StackPanel>
+        
     </Border>
 </UserControl>

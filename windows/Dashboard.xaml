@@ -62,6 +62,7 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
+                             Command="{Binding CapturaRelayCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
                 
                 <RadioButton Content="Reportes de desaparición"
