@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 
@@ -41,13 +42,20 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
 
             if (resultado.GetType() == typeof(User))
             {
-                var dashboard = new Dashboard((User)resultado);
+                User usuario = (User) resultado;
+                var dashboard = new Dashboard(usuario);
                 dashboard.Show();
                 this.Close();
             }
-            else if (resultado.GetType() == typeof(errorValidacion))
+            else if (resultado.GetType() == typeof(ErrorValidacion))
             {
-                errorValidacion error = (errorValidacion)resultado;
+                ErrorValidacion error = (ErrorValidacion)resultado;
+                this.MensajeDeError.Text = error.error;
+                this.MensajeDeError.Visibility = Visibility.Visible;
+            }
+            else if (resultado.GetType() == typeof(Error))
+            {
+                Error error = (Error)resultado;
                 this.MensajeDeError.Text = error.error;
                 this.MensajeDeError.Visibility = Visibility.Visible;
             }

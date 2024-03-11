@@ -21,13 +21,13 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
     /// </summary>
     public partial class Dashboard : Window
     {
-        private User usuarioAutenticado;
+        private User UsuarioAutenticado;
         public Dashboard(User usuario)
         {
             InitializeComponent();
-            this.usuarioAutenticado = usuario;
+            this.UsuarioAutenticado = usuario;
 
-            this.NombreUsuario.Text = this.usuarioAutenticado.name;
+            this.NombreUsuario.Text = this.UsuarioAutenticado.name;
         }
     }
 }
