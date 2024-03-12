@@ -15,9 +15,6 @@
     <None Remove="media\images\senas\Minus loadIcon.png" />
     <None Remove="media\images\senas\Minus RegionCuerpoColorMejorado.png" />
     <None Remove="media\images\senas\RegionCuerpoColorMejorado.png" />
-    <None Remove="mvvm\view\Minus loadIcon.png" />
-    <None Remove="mvvm\view\Minus RegionCuerpoColorMejorado.png" />
-    <None Remove="mvvm\view\RegionCuerpoColorMejorado.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
@@ -33,9 +30,6 @@
     <Resource Include="media\images\senas\Minus loadIcon.png" />
     <Resource Include="media\images\senas\Minus RegionCuerpoColorMejorado.png" />
     <Resource Include="media\images\senas\RegionCuerpoColorMejorado.png" />
-    <Resource Include="mvvm\view\Minus loadIcon.png" />
-    <Resource Include="mvvm\view\Minus RegionCuerpoColorMejorado.png" />
-    <Resource Include="mvvm\view\RegionCuerpoColorMejorado.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />

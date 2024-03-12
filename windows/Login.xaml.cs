@@ -39,7 +39,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
             string password_str = password.Password.ToString();
 
             var resultado = await core.HttpClientHandler.GetTokenRequest(email_str, password_str);
-
+            
             if (resultado.GetType() == typeof(User))
             {
                 User usuario = (User) resultado;
@@ -60,6 +60,5 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
                 this.MensajeDeError.Visibility = Visibility.Visible;
             }
         }
-
     }
 }
