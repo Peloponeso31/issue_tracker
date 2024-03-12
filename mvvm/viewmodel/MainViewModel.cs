@@ -14,22 +14,23 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         public RelayCommand BusquedaRelayCommand { get; set; }
         public RelayCommand SenasParticularesCommand { get; set; }
         public RelayCommand CapturaRelayCommand { get; set; }
-        
+
         public InicioViewModel PantallaInicio { get; set; }
         public BusquedaViewModel PantallaBusqueda { get; set; }
-        public SenasParticularesViewModel PantallaSenasParticulares { get; set; }        
+        public SenasParticularesViewModel PantallaSenasParticulares { get; set; }
         public CapturaViewModel PantallaCaptura { get; set; }
 
         private object _currentView;
 
-		public object CurrentView
-		{
-			get { return _currentView; }
-			set {
-				this._currentView = value;
-				OnPropertyChanged();
-			}
-		}
+        public object CurrentView
+        {
+            get { return _currentView; }
+            set
+            {
+                this._currentView = value;
+                OnPropertyChanged();
+            }
+        }
 
         public MainViewModel()
         {
