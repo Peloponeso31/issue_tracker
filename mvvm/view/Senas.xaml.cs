@@ -117,5 +117,10 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
                 richtextBox1.Document.Blocks.Clear();
             }
         }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
