@@ -31,29 +31,34 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 			}
 		}
 
-		public MainViewModel()
-		{
-			  PantallaInicio = new InicioViewModel();
-			  PantallaBusqueda = new BusquedaViewModel();
-        PantallaCaptura = new CapturaViewModel();
-        PantallaSenasParticulares = new SenasParticularesViewModel();
+        public MainViewModel()
+        {
+            PantallaInicio = new InicioViewModel();
+            PantallaBusqueda = new BusquedaViewModel();
+            PantallaCaptura = new CapturaViewModel();
+            PantallaSenasParticulares = new SenasParticularesViewModel();
 
-			  CurrentView = PantallaInicio;
-
-        InicioRelayCommand = new RelayCommand(o => {
             CurrentView = PantallaInicio;
-        });
 
-        BusquedaRelayCommand = new RelayCommand(o => {
-            CurrentView = PantallaBusqueda;
-        });
-            
-        SenasParticularesCommand = new RelayCommand(o => {
-				    CurrentView = PantallaSenasParticulares;
-			  });
-            
-        CapturaRelayCommand = new RelayCommand(o => {
-            CurrentView = PantallaCaptura;
-        });
+            InicioRelayCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaInicio;
+            });
+
+            BusquedaRelayCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaBusqueda;
+            });
+
+            SenasParticularesCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaSenasParticulares;
+            });
+
+            CapturaRelayCommand = new RelayCommand(o =>
+            {
+                CurrentView = PantallaCaptura;
+            });
+        }
     }
 }

@@ -14,11 +14,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//test@example.com
+//password
+
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 {
-    /// <summary>
-    /// Lógica de interacción para Senas.xaml
-    /// </summary>
     public partial class Senas : UserControl
     {
         public Senas()
