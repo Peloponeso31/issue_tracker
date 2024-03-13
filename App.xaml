@@ -26,6 +26,10 @@
             <DataTemplate DataType="{x:Type viewModel:CapturaViewModel}">
                 <view:Captura/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
+                <view:Test/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

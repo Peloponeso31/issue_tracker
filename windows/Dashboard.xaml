@@ -71,6 +71,13 @@
                              FontSize="14"
                              Command="{Binding SenasParticularesCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
+                
+                <RadioButton Content="Test"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Command="{Binding TestRelayCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
 
             </StackPanel>
 
