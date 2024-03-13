@@ -21,6 +21,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 {
     public partial class Senas : UserControl
     {
+        String globarCoordenadas, globalRGB;
         public Senas()
         {
             InitializeComponent();
@@ -39,11 +40,25 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
             int x = (int)posicionClic.X;
             int y = (int)posicionClic.Y;
 
+            globarCoordenadas = x + ", " + y;
+
             //Obtener el color del píxel en las coordenadas del clic
             Color colorPixel = ObtenerColorPixel(x, y);
 
-            //Mostrar valores
-            text1.Content = ("Coordenadas: (" + x + ", " + y + ") " + " RGB: " + colorPixel.R + ", " + colorPixel.G + ", " + colorPixel.B);
+            globalRGB = colorPixel.R + ", " + colorPixel.G + ", " + colorPixel.B;
+
+            //Mostrar valores obtenidos
+            text1.Content = "Coordenadas: " + globarCoordenadas + " RGB: " + globalRGB;
+
+            BuscarParte(globalRGB);
+        }
+
+        private void BuscarParte(String RGB)
+        {
+            switch (RGB) {
+                case "":
+                    break;
+            }
         }
 
         private Color ObtenerColorPixel(int x, int y)
@@ -87,40 +102,22 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
                 }
             }
         }
-
-        private void ComboBox1_Clic(object sender, MouseButtonEventArgs e)
+        private void ReplaceDescripcion(object sender, RoutedEventArgs e)
         {
-            comboBox1.Items.Remove("Tipo");
-            text1.Content = "sI";
-        }
-
-        private void ComboBox2_Clic(object sender, MouseButtonEventArgs e)
-        {
-            comboBox2.Items.Remove("Lado");
-        }
-
-        private void ComboBox3_Clic(object sender, MouseButtonEventArgs e)
-        {
-            comboBox3.Items.Remove("Vista");
-        }
-
-        private void ComboBox4_Clic(object sender, MouseButtonEventArgs e)
-        {
-            comboBox4.Items.Remove("Cantidad");
-        }
-
-        private void richText1_Clic(object sender, MouseButtonEventArgs e)
-        {
-            string textBox = new TextRange(richtextBox1.Document.ContentStart, richtextBox1.Document.ContentEnd).Text;
-            if (textBox == "Descripción")
+            if (DescriptionBox.Text == "Descripción")
             {
-                richtextBox1.Document.Blocks.Clear();
+                DescriptionBox.Text = "";
+                DescriptionBox.Foreground = Brushes.Black;
             }
         }
 
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        private void ReplaceBlankDescripcion(object sender, RoutedEventArgs e)
         {
-
+            if (DescriptionBox.Text == "")
+            {
+                DescriptionBox.Foreground = Brushes.DarkGray;
+                DescriptionBox.Text = "Descripción";
+            }
         }
     }
 }
