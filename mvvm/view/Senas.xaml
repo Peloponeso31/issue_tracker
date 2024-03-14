@@ -140,7 +140,7 @@
             <ComboBoxItem Content="CICATRIZ" Foreground="Black"/>
             <ComboBoxItem Content="CIRCUNCISION" Foreground="Black"/>
             <ComboBoxItem Content="CORTES DECORATIVOS" Foreground="Black"/>
-            <ComboBoxItem Content="GEFECTO FISICO" Foreground="Black"/>
+            <ComboBoxItem Content="DEFECTO FISICO" Foreground="Black"/>
             <ComboBoxItem Content="LUNARES O MANCHAS" Foreground="Black"/>
             <ComboBoxItem Content="MARCAS TEMPORALES" Foreground="Black"/>
             <ComboBoxItem Content="PROTESIS" Foreground="Black"/>
@@ -153,11 +153,15 @@
             <ComboBoxItem Content="IZQUIERDO" Foreground="Black"/>
             <ComboBoxItem Content="NO ESPECIFICA" Foreground="Black"/>
             <ComboBoxItem Content="UNICO" Foreground="Black"/>
+            <ComboBoxItem Content="ANTERIOR" Foreground="Black"/>
+            <ComboBoxItem Content="POSTERIOR" Foreground="Black"/>
         </ComboBox>
         <ComboBox x:Name="comboBox3" Foreground="DarkGray" HorizontalAlignment="Left" Margin="623,146,0,0" VerticalAlignment="Top" Width="257">
             <ComboBoxItem Content="Vista" IsEnabled="False"/>
             <ComboBoxItem Content="DORSAL" Foreground="Black"/>
             <ComboBoxItem Content="FRONTAL" Foreground="Black"/>
+            <ComboBoxItem Content="INTERNO" Foreground="Black"/>
+            <ComboBoxItem Content="EXTERNO" Foreground="Black"/>
             <ComboBoxItem Content="NO ESPECIFICA" Foreground="Black"/>
         </ComboBox>
         <ComboBox x:Name="comboBox4" Foreground="DarkGray" HorizontalAlignment="Left" Margin="623,185,0,0" VerticalAlignment="Top" Width="257">
@@ -174,7 +178,7 @@
         </ComboBox>
         <TextBox x:Name="DescriptionBox" Foreground="DarkGray" Margin="623,222,366,355" TextWrapping="Wrap" Text="Descripción" VerticalAlignment="Top" Height="106" GotFocus="ReplaceDescripcion" LostFocus="ReplaceBlankDescripcion"/>
         <Image x:Name="pictureBox4" Margin="927,35,0,0" Source="/media/images/senas/Minus loadIcon.png" MouseLeftButtonDown="image_userSelect" Height="245" VerticalAlignment="Top" HorizontalAlignment="Left" Width="288"/>
-        <Button Style="{DynamicResource RoundedButtonStyle}" Content="Guardar" HorizontalAlignment="Left" Margin="934,294,0,0" VerticalAlignment="Top" Width="125" Height="34" RenderTransformOrigin="0,0.5" Background="{StaticResource CustomColorg}"/>
+        <Button Style="{DynamicResource RoundedButtonStyle}" Content="Guardar" HorizontalAlignment="Left" Margin="934,294,0,0" VerticalAlignment="Top" Width="125" Height="34" RenderTransformOrigin="0,0.5" Background="{StaticResource CustomColorg}" Click="Button_Click"/>
         <Button Style="{DynamicResource ButtonStyle1}" Content="Borrar" HorizontalAlignment="Left" Margin="1081,294,0,0" VerticalAlignment="Top" Width="125" Height="34" Background="{StaticResource CustomColorr}"/>
         <DataGrid x:Name="dataGridView1" d:ItemsSource="{d:SampleData ItemCount=1}" Margin="623,341,31,36" AutoGenerateColumns="False" Width="592">
             <DataGrid.Columns>
