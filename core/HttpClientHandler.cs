@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -16,13 +17,13 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
     {
         private static HttpClient sharedClient = new()
         {
-            BaseAddress = new Uri("http://187.188.213.206:18080/api/"),
+            BaseAddress = new Uri("http://187.188.213.206:18080/"),
         };
 
         public static async Task<Object> GetTokenRequest(string Usuario, string Password)
         {
             sharedClient.DefaultRequestHeaders.Add("Acept", "application/json");
-            using HttpResponseMessage response = await sharedClient.GetAsync($"token?email={Usuario}&password={Password}&token_name=escritorio.{System.Environment.MachineName}");
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/token?email={Usuario}&password={Password}&token_name=escritorio.{System.Environment.MachineName}");
             var jsonResponse = await response.Content.ReadAsStringAsync();
             var request = response.RequestMessage;
 
@@ -36,7 +37,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
                     Debug.WriteLine(jsonResponse);
                     Token token = JsonSerializer.Deserialize<Token>(jsonResponse);
                     sharedClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.data.plain_text_token);
-                    HttpResponseMessage authResponse = await sharedClient.GetAsync("user");
+                    HttpResponseMessage authResponse = await sharedClient.GetAsync("api/user");
                     jsonResponse = await authResponse.Content.ReadAsStringAsync();
                     User usuario = JsonSerializer.Deserialize<User>(jsonResponse)!;
                     return usuario;
@@ -61,6 +62,17 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             }
 
             return null;
+        }
+
+        public static async Task<string> GetReportePdf()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"reportes/informe_de_inicio/3");
+            byte[] archivo = await response.Content.ReadAsByteArrayAsync();
+            string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string ruta = Path.Combine(documentos, "archivo.pdf"); 
+
+            await File.WriteAllBytesAsync(ruta, archivo);
+            return ruta;
         }
     }
 }

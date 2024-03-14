@@ -35,10 +35,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
 
         private async void autenticar_click(object sender, RoutedEventArgs e)
         {
-            string email_str = email.Text.ToString();
-            string password_str = password.Password.ToString();
-
-            var resultado = await core.HttpClientHandler.GetTokenRequest(email_str, password_str);
+            var resultado = await core.HttpClientHandler.GetTokenRequest(email.Text.ToString(), password.Password.ToString());
             
             if (resultado.GetType() == typeof(User))
             {

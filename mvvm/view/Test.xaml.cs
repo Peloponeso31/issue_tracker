@@ -26,9 +26,11 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
             InitializeComponent();
         }
 
-        private void BotonPrueba_Click(object sender, RoutedEventArgs e)
+        private async void BotonPrueba_Click(object sender, RoutedEventArgs e)
         {
-            var viewer = new VisualizadorPDF();
+            string ruta = await core.HttpClientHandler.GetReportePdf();
+            
+            var viewer = new VisualizadorPDF(ruta);
             viewer.Show();
         }
     }

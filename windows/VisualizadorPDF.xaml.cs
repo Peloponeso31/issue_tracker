@@ -19,10 +19,10 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
     /// </summary>
     public partial class VisualizadorPDF : Window
     {
-        public VisualizadorPDF()
+        public  VisualizadorPDF(string ruta)
         {
             InitializeComponent();
-            webView.Source = new Uri("https://www.orimi.com/pdf-test.pdf");
+            webView.Source = new Uri("file:///" + ruta);
         }
     }
 }
