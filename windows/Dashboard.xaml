@@ -49,13 +49,6 @@
                              IsChecked="True"
                              Command="{Binding InicioRelayCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
-                
-                <RadioButton Content="Busqueda"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Command="{Binding BusquedaRelayCommand}"
-                             Style="{StaticResource MenuButtonTheme}"/>
 
                 <RadioButton Content="Captura"
                              Height="50"
@@ -71,7 +64,7 @@
                              Command="{Binding SenasParticularesCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
                 
-                <RadioButton Content="Test"
+                <RadioButton Content="Reportes de desaparicion"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
@@ -92,13 +85,13 @@
                 </TextBlock>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Background="#e9eff5">
+            <Grid Grid.Row="1" Grid.Column="1" Background="#e9eff5">
                 <ContentControl 
                     Grid.Row="1" 
                     Grid.Column="1"
                     Margin="20"
                     Content="{Binding CurrentView}"/>
-            </StackPanel>
+            </Grid>
 
 
         </Grid>

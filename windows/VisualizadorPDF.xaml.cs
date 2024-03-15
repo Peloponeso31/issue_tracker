@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
         {
             InitializeComponent();
             webView.Source = new Uri("file:///" + ruta);
+            this.Title = System.IO.Path.GetFileName(ruta);
         }
     }
 }

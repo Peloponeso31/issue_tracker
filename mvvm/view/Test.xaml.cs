@@ -24,14 +24,21 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
         public Test()
         {
             InitializeComponent();
+            InitializeAsync();
         }
 
-        private async void BotonPrueba_Click(object sender, RoutedEventArgs e)
+        private async void ReportesDataGrid_DoubleClick_Handler(object sender, MouseButtonEventArgs e)
         {
-            string ruta = await core.HttpClientHandler.GetReportePdf();
-            
+            var selected = ReportesDataGrid.SelectedItem as core.requestObjects.ReporteData;
+            string ruta = await core.HttpClientHandler.GetReportePdf(selected.id.ToString());            
             var viewer = new VisualizadorPDF(ruta);
             viewer.Show();
+        }
+
+        private async void InitializeAsync()
+        {
+            core.requestObjects.Reporte reportes = await core.HttpClientHandler.GetReportes();
+            ReportesDataGrid.ItemsSource = reportes.data;
         }
     }
 }

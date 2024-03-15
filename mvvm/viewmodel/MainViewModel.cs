@@ -31,14 +31,15 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 
         private object _currentView;
 
-		    public object CurrentView
-		    {
-			      get { return _currentView; }
-			      set {
-				        this._currentView = value;
-				        OnPropertyChanged();
-			      }
-		    }
+        public object CurrentView
+        {
+            get { return _currentView; }
+            set
+            {
+                this._currentView = value;
+                OnPropertyChanged();
+            }
+        }
 
         private ObservableCollection<PhoneNumber> _phoneNumbers = new ObservableCollection<PhoneNumber>();
         public ObservableCollection<PhoneNumber> PhoneNumbers
@@ -62,11 +63,13 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         }
         public ICommand AddPhoneNumberCommand { get; }
         public MainViewModel()
-		    {
-			      PantallaInicio = new InicioViewModel();
-			      PantallaBusqueda = new BusquedaViewModel();
+        {
+            PantallaInicio = new InicioViewModel();
+            PantallaBusqueda = new BusquedaViewModel();
             PantallaCaptura = new CapturaViewModel();
             AddPhoneNumberCommand = new DelegateCommand(AddPhoneNumber);
+            PantallaTest = new TestViewModel();
+            PantallaSenasParticulares = new SenasParticularesViewModel();
 
             CurrentView = PantallaInicio;
 
@@ -89,13 +92,13 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
             {
                 CurrentView = PantallaCaptura;
             });
-            
+
             TestRelayCommand = new RelayCommand(o =>
             {
                 CurrentView = PantallaTest;
             });
         }
-        
+
         private void AddPhoneNumber()
         {
             PhoneNumbers.Add(new PhoneNumber());
