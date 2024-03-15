@@ -1,4 +1,4 @@
-﻿<Window x:Class="Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.Dashboard"
+﻿<Window x:Class="Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows.Dashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,6 +13,7 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
+    
     <Border Background="#fff">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -38,8 +39,8 @@
                 <TextBlock FontSize="10" 
                            FontWeight="Bold" 
                            Foreground="White" 
-                           Margin="30,0,0,0"> 
-                    Opciones 
+                           Margin="30,5,5,5"> 
+                    Opciones: 
                 </TextBlock>
                 <RadioButton Content="Inicio"
                              Height="50"
@@ -63,16 +64,42 @@
                              Command="{Binding CapturaRelayCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
 
+                <RadioButton Content="Señas particulares"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Command="{Binding SenasParticularesCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                
+                <RadioButton Content="Test"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Command="{Binding TestRelayCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" 
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <TextBlock Margin="10"
+                           FontSize="18"
+                           x:Name="NombreUsuario">
+                    NOMBRE DE USUARIO
+                </TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Background="#e9eff5">
+                <ContentControl 
+                    Grid.Row="1" 
+                    Grid.Column="1"
+                    Margin="20"
+                    Content="{Binding CurrentView}"/>
             </StackPanel>
 
-            <ContentControl 
-                Grid.Row="1" 
-                Grid.Column="1"
-                Margin="20"
-                Content="{Binding CurrentView}"/>
 
         </Grid>
     </Border>

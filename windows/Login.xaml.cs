@@ -1,5 +1,4 @@
-﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -15,8 +14,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
 {
     /// <summary>
     /// Interaction logic for login.xaml
@@ -29,14 +33,29 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
             InitializeComponent();
         }
 
-        private void autenticar_click(object sender, RoutedEventArgs e)
+        private async void autenticar_click(object sender, RoutedEventArgs e)
         {
-            var dashboard = new Dashboard();
-            string email_str = email.Text.ToString();
-            string password_str = password.Password.ToString();
-            dashboard.Show();
-            this.Close();
+            var resultado = await core.HttpClientHandler.GetTokenRequest(email.Text.ToString(), password.Password.ToString());
+            
+            if (resultado.GetType() == typeof(User))
+            {
+                User usuario = (User) resultado;
+                var dashboard = new Dashboard(usuario);
+                dashboard.Show();
+                this.Close();
+            }
+            else if (resultado.GetType() == typeof(ErrorValidacion))
+            {
+                ErrorValidacion error = (ErrorValidacion)resultado;
+                this.MensajeDeError.Text = error.error;
+                this.MensajeDeError.Visibility = Visibility.Visible;
+            }
+            else if (resultado.GetType() == typeof(Error))
+            {
+                Error error = (Error)resultado;
+                this.MensajeDeError.Text = error.error;
+                this.MensajeDeError.Visibility = Visibility.Visible;
+            }
         }
-
     }
 }
