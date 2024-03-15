@@ -9,6 +9,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/themes/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="/themes/UIColor.xaml"/>
+                <ResourceDictionary Source="/themes/UIComponents.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:InicioViewModel}">

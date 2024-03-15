@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,8 +27,11 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
         public Dashboard(User usuario)
         {
             InitializeComponent();
+            MainViewModel viewModel = new MainViewModel();
+            Captura mainPage = new Captura();
+            mainPage.DataContext = viewModel;
+            
             this.UsuarioAutenticado = usuario;
-
             this.NombreUsuario.Text = this.UsuarioAutenticado.name;
         }
     }

@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="PrimaryBlueColor" Color="#9A1A1A"/>
+    <SolidColorBrush x:Key="SecundaryBlueColor" Color="#EFF2FF"/>
+
+    <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="SecundaryTextColor" Color="#BBC1D1"/>
+
+    <SolidColorBrush x:Key="PrimaryGrayColor" Color="#BBC1D1"/>
+    
+    <!--Color botonea-->
+    <SolidColorBrush x:Key="PrimaryBlueBox" Color="#9A1A1A"/>
+    <SolidColorBrush x:Key="PrimaryGrayBox" Color="#64677A"/>
+
+    <SolidColorBrush x:Key="SecundaryBlueBox" Color="#9A1A1A"/>
+    <SolidColorBrush x:Key="SecundaryGrayBox" Color="#9295A5"/>
+
+    <SolidColorBrush x:Key="TertiaryBlueBox" Color="#9A1A1A"/>
+    <SolidColorBrush x:Key="TertaryGrayBox" Color="#CECECE"/>
+
+    <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#FFFFFF"/>
+    
+
+
+</ResourceDictionary>

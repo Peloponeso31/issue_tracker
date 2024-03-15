@@ -7,6 +7,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
+        private Action addPhoneNumber;
 
         public event EventHandler CanExecuteChanged
         {
@@ -18,6 +19,11 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
         {
             _execute = execute;
             _canExecute = canExecute;
+        }
+
+        public RelayCommand(Action addPhoneNumber)
+        {
+            this.addPhoneNumber = addPhoneNumber;
         }
 
         public bool CanExecute(object parameter)

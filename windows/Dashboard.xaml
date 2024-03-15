@@ -9,8 +9,7 @@
         Title="Dashboard"
         Background="Transparent"
         MinWidth="1024"
-        MinHeight="768" Width="658">
-    
+        MinHeight="768" Width="1400">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
