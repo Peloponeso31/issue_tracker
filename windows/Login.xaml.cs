@@ -37,10 +37,9 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
         {
             var resultado = await core.HttpClientHandler.GetTokenRequest(email.Text.ToString(), password.Password.ToString());
             
-            if (resultado.GetType() == typeof(User))
+            if (resultado.GetType() == typeof(Token))
             {
-                User usuario = (User) resultado;
-                var dashboard = new Dashboard(usuario);
+                var dashboard = new Dashboard();
                 dashboard.Show();
                 this.Close();
             }
