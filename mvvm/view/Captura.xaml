@@ -1034,7 +1034,7 @@
                     </TabItem>
                     <TabItem   Header="Información Desaparición"  Style="{DynamicResource TabItemStyle}" >
                         <Grid>
-                            <Border Background="White" CornerRadius="10" Margin="5,5,10,-14" Padding="10" Grid.ColumnSpan="2">
+                            <Border Background="White" CornerRadius="10" Margin="5,5,3,180" Padding="10">
                                 <StackPanel>
 
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -1174,12 +1174,116 @@
                                             <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
                                         </StackPanel>
                                         <StackPanel>
-                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">AREA QUE ATENDERA:</TextBlock>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">DESCRIPCIÓN DE LA SITUACIÓN DE AMENAZA:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿CÚANTAS VECES ANTES LA PERSONA HA DESAPARECIDO O SE HA AUSENTADO?</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">DESCRIPCIÓN DE LA SITUACIÓN PREVIA O ANOTE LOS FOLIOS EN EL CAMPO SIGUIENTE SI YA HA ESTADO REGISTRADA:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">FOLIOS PREVIOS:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">DATO DE PERSONA(S) QUE PUDIERON ESTAR RELACIONADAS O BRINDAR INFORMACIÓN SOBRE LA DESAPARICIÓN:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">DESCRIPCIÓN DE LOS HECHOS DE LA DESAPARICIÓN:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">SÍNTESIS DE LOS HECHOS DE LA DESAPARICIÓN:</TextBlock>
                                             <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
                                         </StackPanel>
                                     </StackPanel>
                                     <!-- Línea de separación horizontal -->
                                     <Separator Margin="10"/>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">POSIBLE HIPÓTESIS DE DESAPARICIÓN 1:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">CIRCUNSTANCIA INICIAL 1:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">POSIBLE HIPÓTESIS DE DESAPARICIÓN 2:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">CIRCUNSTANCIA INICIAL 2:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">SITIO INICIAL:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">AREA QUE CODIFICA INICIAL:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿DESAPARECIÓ CON ALGUIEN MÁS?:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">NÚM. PERS. EN MISMO EVENTO:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">CIRCUNSTANCIA DE DESAPARICIÓN (ANOTE TEMPORALMENTE POR ESPECIFICAR):</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">REFERENCIAS DE LA O LAS OTRA(S) PERSONA(S):</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">EXPEDIENTES DIRECTOS: FOLIOS DE LAS OTRAS PERSONAS CON LAS QUE DESAPARECIÓ O QUE TIENEN RELACIÓN CON LA DESAPARICIÓN:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">EXPEDIENTES INDIRECTOS: FOLIOS DE OTRAS PERSONAS DESAPARECIDAS RELACIONADAS CON LA PERSONA QUE SE ESTÁ REGISTRANDO (FAMILIARES, AMISTADES, CONOCIDOS, ETC):</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿AUTORIZA QUE PUBLIQUE EL BOLETÍN?:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">HIPERVÍNCULO EN FACEBOOK AL BOLETÍN:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">HIPERVÍNCULO A CARPETA DE EXPEDIENTE DRIVE:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                                         <StackPanel>
                                             <Button Content="Guardar" Width="719" Height="30" />
@@ -1190,8 +1294,220 @@
                         </Grid>
                     </TabItem>
                     <TabItem  Header="Localización" Style="{DynamicResource TabItemStyle}">
+                        <Grid>
+                            <Border Background="White" CornerRadius="10" Margin="5,5,10,-14" Padding="10" Grid.ColumnSpan="2">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">FECHA DE LOCALIZACIÓN:</TextBlock>
+                                            <DatePicker Margin="10,0,0,0" MinWidth="150" ></DatePicker>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">FECHA DE ACTUALIZACIÓN DE ESTATUS:</TextBlock>
+                                            <DatePicker Margin="10,0,0,0" MinWidth="150" ></DatePicker>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">SÍNTESIS DE LOCALIZACIÓN:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HIPERVÍNCULO SÍNTESIS DE LOCALIZACIÓN:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
+                                    <!-- Línea de separación horizontal -->
+         
+                                    <Separator Margin="10"/>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HIPÓTESIS DE LOCALIZACIÓN (OGPI) 1:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">CLASIFICACIÓN DE PERSONA LOCALIZADA 1:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HIPÓTESIS DE LOCALIZACIÓN (OGPI) 2:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">CLASIFICACIÓN DE PERSONA LOCALIZADA 2:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">SITIO FINAL:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">AREA QUE CODIFICA INICIAL:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HIPOTESIS DEB/FGE:</TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="140" Height="23"></ComboBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
                     </TabItem>
                     <TabItem  Header="Contexto" Style="{DynamicResource TabItemStyle}">
+                        <Grid>
+                            <Border Background="White" CornerRadius="10" Margin="5,5,10,-14" Padding="10" Grid.ColumnSpan="2">
+                                <StackPanel>
+                                    <StackPanel>
+                                        <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="CONTEXTO FAMILIAR" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿CON QUÉ PERSONAS VIVE?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">ÚLTIMA PAREJA SENTIMENTAL CONOCIDA:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HIJAS(OS):</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿QUIÉN ES EL INTEGRANTE DE SU FAMILIA MÁS CERCANO?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿CONOCE SI HA SUFRIDO ALGÚN TIPO DE VIOLENCIA POR PARTE DE ALGÚN INTEGRANTE DE LA FAMILIA?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <!-- Línea de separación horizontal -->
+
+                                    <Separator Margin="10"/>
+                                    <StackPanel>
+                                        <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="CONTEXTO ECONÓMICO-LABORAL" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿DÓNDE TRABAJA O CUÁL ES SU MEDIO DE SUBSISTENCIA?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿SABE SI LE GUSTA SU TRABAJO?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿HA MANIFESTADO LA INTENSIÓN DE IRSE A TRABAJAR FUERA DE LA CIUDAD?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿HA MANIFESTADO LA INTENSIÓN DE IRSE A TRABAJAR FUERA DE LA CIUDAD?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿CONOCE SI TIENE DEUDAS?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿EN QUÉ EMPRESA O SECTOR TRABAJABA LA PERSONA DESAPARECIDA?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿CUÁL ERA SU PUESTO O FUNCIÓN LABORAL?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿HACE CUÁNTO TIEMPO TRABAJABA ALLÍ?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿TENÍA BUENAS RELACIONES CON SUS COLEGAS Y SUPERIORES?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿EXISTÍAN CONFLICTOS LABORALES O DESACUERDOS EN SU ENTORNO LABORAL? ¿HABÍA EXPRESADO ALGUNA PREOCUPACIÓN SOBRE SU TRABAJO RECIENTEMENTE? </TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿HABÍA EXPERIMENTADO CAMBIOS SIGNIFICATIVOS EN SUS FINANZAS RECIENTEMENTE?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿PARTICIPABA EN ACTIVIDADES EXTRALABORALES QUE PUDIERAN TENER RELEVANCIA?</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <!-- Línea de separación horizontal -->
+
+                                    <Separator Margin="10"/>
+                                    <StackPanel>
+                                        <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="CONTEXTO SOCIAL" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿QUÉ PASATIEMPOS TIENE?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿PERTENECE A ALGÚN CLUB U ORGANIZACIÓN?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿ESTUDIA?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿PUEDE MENCIONAR SUS AMISTADES MÁS CERCANAS?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">¿HA MANIFESTADO TENER AMISTADES EN OTRO MUNICIPIO (ESTADO)?:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">CORREO ELECTRÓNICO, NOMBRE DE CÓMO APARECE EN REDES SOCIALES:</TextBlock>
+                                            <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
                     </TabItem>
                     <TabItem  Header="Control OGPI" Style="{DynamicResource TabItemStyle}">
                         <Grid>
