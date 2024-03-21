@@ -19,8 +19,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
     {
         private static HttpClient sharedClient = new()
         {
-            // Cambiar a localhost para pruebas locales.
-            BaseAddress = new Uri("http://192.168.56.1/"),
+            BaseAddress = new Uri("http://187.251.212.146:18080/"),
         };
 
         private static string NombreArchivoSanitizado(string nombre)
