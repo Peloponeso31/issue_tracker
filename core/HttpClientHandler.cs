@@ -5,8 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
@@ -17,8 +19,14 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
     {
         private static HttpClient sharedClient = new()
         {
-            BaseAddress = new Uri("http://187.251.212.146:8006/"),
+            BaseAddress = new Uri("http://187.251.212.146:18080/"),
         };
+
+        private static string NombreArchivoSanitizado(string nombre)
+        {
+            string patron = "[\\/:*?\"<>|]";
+            return Regex.Replace(nombre, patron, "-");
+        }
 
         public static async Task<Object> GetTokenRequest(string Usuario, string Password)
         {
@@ -64,15 +72,24 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             return null;
         }
 
-        public static async Task<string> GetReportePdf()
+        public static async Task<string> GetReportePdf(string id)
         {
-            using HttpResponseMessage response = await sharedClient.GetAsync($"reportes/informe_de_inicio/3");
-            byte[] archivo = await response.Content.ReadAsByteArrayAsync();
+            using HttpResponseMessage response = await sharedClient.GetAsync($"reportes/informe_de_inicio/{id}");
+            string headerValue = response.Content.Headers.GetValues("Content-Disposition").FirstOrDefault().ToString();
+            string filename = new ContentDisposition(headerValue).FileName;
             string documentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string ruta = Path.Combine(documentos, "archivo.pdf"); 
-
+            string ruta = Path.Combine(documentos, NombreArchivoSanitizado(filename)); 
+            byte[] archivo = await response.Content.ReadAsByteArrayAsync();
             await File.WriteAllBytesAsync(ruta, archivo);
             return ruta;
+        }
+
+        public static async Task<Reporte> GetReportes()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/reportes");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            Reporte reportes = JsonSerializer.Deserialize<Reporte>(jsonResponse);
+            return reportes;
         }
     }
 }

@@ -7,10 +7,45 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <Button x:Name="BotonPrueba" Width="100" Click="BotonPrueba_Click">
-                Accion
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Command="{Binding CapturaRelayCommand}">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+                Capturar reporte.
             </Button>
         </StackPanel>
+        
+        <DataGrid x:Name="ReportesDataGrid" AutoGenerateColumns="False" Grid.Row="1">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="ReportesDataGrid_DoubleClick_Handler"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre del desaparecido" Binding="{Binding desaparecido[0]}"/>
+                <DataGridTextColumn Header="Nombre del reportante" Binding="{Binding reportante[0]}"/>
+                <DataGridTextColumn Header="Folio" Binding="{Binding folio}"/>
+                <DataGridTextColumn Header="Fecha de desaparicion" Binding="{Binding fecha_desaparicion}"/>
+                <DataGridTextColumn Header="Fecha de percato" Binding="{Binding fecha_percato}"/>
+                <DataGridTextColumn Header="estatus" Binding="{Binding estatus}"/>
+                <DataGridTextColumn Header="Zona de desaparicion" Binding="{Binding zona_estado}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--<StackPanel> -->
+        <!--    <Button x:Name="BotonPrueba" Width="100" Click="BotonPrueba_Click"> -->
+        <!--        Accion -->
+        <!--    </Button> -->
+        <!--</StackPanel> -->
+        
     </Grid>
 </UserControl>
