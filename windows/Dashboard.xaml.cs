@@ -24,15 +24,21 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
     public partial class Dashboard : Window
     {
         private User UsuarioAutenticado;
-        public Dashboard(User usuario)
+        public Dashboard()
         {
             InitializeComponent();
-            MainViewModel viewModel = new MainViewModel();
-            Captura mainPage = new Captura();
-            mainPage.DataContext = viewModel;
-            
-            this.UsuarioAutenticado = usuario;
-            this.NombreUsuario.Text = this.UsuarioAutenticado.name;
+            InicializarDashboard();
+        }
+
+        private async void InicializarDashboard()
+        {
+            var resultado = await core.HttpClientHandler.GetUsuarioActualRequest();
+
+            if (resultado.GetType() == typeof(User))
+            {
+                this.UsuarioAutenticado = (User) resultado;
+                this.NombreUsuario.Text = this.UsuarioAutenticado.data.name;
+            }
         }
     }
 }
