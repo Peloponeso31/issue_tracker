@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view"
+             
              mc:Ignorable="d" d:DesignWidth="1100">
 
     <UserControl.Resources>
@@ -1667,12 +1668,18 @@
                             </Border>
                         </Grid>
                     </TabItem>
-                    <TabItem  Header="Señas Particulares  " Style="{DynamicResource TabItemStyle}">
-                        <Grid Margin="0,0,332,0">
-                            <ScrollBar Name="scrollBarVertical" Orientation="Vertical" 
-                   Minimum="0" Maximum="100" Value="0" 
-                   SmallChange="1" LargeChange="10" 
-                   Margin="114,98,1115,553" RenderTransformOrigin="0.5,0.5" >
+                    <TabItem  Header="Señas Particulares  " 
+                              Style="{DynamicResource TabItemStyle}">
+                        <Grid Margin="0,0 0,0" Height="auto" Width="auto">
+                            <ScrollBar 
+                                Name="scrollBarVertical" 
+                                Orientation="Vertical" 
+                                Minimum="0" 
+                                Maximum="10" 
+                                Value="0" 
+                                SmallChange="1" LargeChange="10" 
+                                Margin="0,250,800,300" 
+                                RenderTransformOrigin="0.5,0.5" >
                                 <ScrollBar.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleX="1"/>
@@ -1683,16 +1690,58 @@
                                 </ScrollBar.RenderTransform>
                             </ScrollBar>
 
-                            <Label x:Name="text1" Content="Label" HorizontalAlignment="Left" Margin="31,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.7,-1.93"/>
-                            <Image x:Name="imageColorMap" HorizontalAlignment="Left" Height="95" Margin="31,35,0,0" VerticalAlignment="Top" Width="100" Source="/media/images/senas/RegionCuerpoColorMejorado.png" Stretch="Fill"/>
-                            <Image x:Name="imageSide" HorizontalAlignment="Left" Height="84" Margin="31,35,0,0" VerticalAlignment="Top" Width="100" Source="/media/images/senas/Cuerpo MapingSide.png" Stretch="Fill"/>
-                            <ScrollViewer Name="scrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,563,248">
-                                <Image x:Name="imageUnix" Height="612" Margin="31,35,0,0" Width="558" Source="/media/images/senas/CuerpoUNIXMejorado.png" MouseLeftButtonDown="image_userIn" Stretch="Fill"/>
+                            <Label x:Name="text1" 
+                                   Content="Label" 
+                                   HorizontalAlignment="Left" 
+                                   Margin="31,35,0,0" 
+                                   VerticalAlignment="Top" 
+                                   RenderTransformOrigin="0.7,-1.93"/>
+
+                            <Image x:Name="imageColorMap" 
+                                   HorizontalAlignment="Left" 
+                                   Height="47" Margin="128,129,0,0" 
+                                   VerticalAlignment="Top" 
+                                   Width="50" 
+                                   Source="/media/images/senas/RegionCuerpoColorMejorado.png" 
+                                   Stretch="Fill"/>
+
+                            <Image x:Name="imageSide" 
+                                   HorizontalAlignment="Left" 
+                                   Height="47" 
+                                   Margin="128,129,0,0" 
+                                   VerticalAlignment="Top" 
+                                   Width="50" 
+                                   Source="/media/images/senas/Cuerpo MapingSide.png" 
+                                   Stretch="Fill"/>
+
+                            <ScrollViewer Name="scrollViewer" 
+                                          HorizontalScrollBarVisibility="Auto" 
+                                          VerticalScrollBarVisibility="Auto" 
+                                          Margin="0,-4,682,251">
+
+                                <Image x:Name="imageUnix" 
+                                       Height="612" 
+                                       Margin="31,35,0,0" 
+                                       Width="558" 
+                                       Source="/media/images/senas/CuerpoUNIXMejorado.png" 
+                                       MouseLeftButtonDown="image_userIn" Stretch="Fill"/>
                             </ScrollViewer>
 
 
 
-                            <TextBox x:Name="textBox1" Foreground="DarkGray" HorizontalAlignment="Right" Margin="0,23,278,0" TextWrapping="Wrap" Text="Region del cuerpo" VerticalAlignment="Top" IsReadOnly="True" Width="257" MinWidth="105" MaxWidth="257" RenderTransformOrigin="0.5,0.5">
+                            <TextBox x:Name="textBox1"
+                                     Grid.Row="0"
+                                     Grid.Column="1"
+                                     Width="257" 
+                                     Foreground="DarkGray" 
+                                     HorizontalAlignment="Right"
+                                     Margin="0,23,395,0" 
+                                     TextWrapping="Wrap" 
+                                     Text="Region del cuerpo" 
+                                     VerticalAlignment="Top"
+                                     IsReadOnly="True" 
+                                     RenderTransformOrigin="0.5,0.5">
+
                                 <TextBox.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -1702,38 +1751,116 @@
                                     </TransformGroup>
                                 </TextBox.RenderTransform>
                             </TextBox>
-                            <ComboBox x:Name="comboBox1" Foreground="DarkGray" HorizontalAlignment="Right" Margin="0,54,278,0" VerticalAlignment="Top" Width="257" LostFocus="changeBlankTipo">
-                                <ComboBoxItem Content="Tipo" IsEnabled="False" Foreground="DarkGray"/>
-                                <ComboBoxItem Content="ARETE/PERFORACIONES" Foreground="Black"/>
-                                <ComboBoxItem Content="CICATRIZ" Foreground="Black"/>
-                                <ComboBoxItem Content="CIRCUNCISION" Foreground="Black"/>
-                                <ComboBoxItem Content="CORTES DECORATIVOS" Foreground="Black"/>
-                                <ComboBoxItem Content="DEFECTO FISICO" Foreground="Black"/>
-                                <ComboBoxItem Content="LUNARES O MANCHAS" Foreground="Black"/>
-                                <ComboBoxItem Content="MARCAS TEMPORALES" Foreground="Black"/>
-                                <ComboBoxItem Content="PROTESIS" Foreground="Black"/>
-                                <ComboBoxItem Content="TATUAJE" Foreground="Black"/>
-                                <ComboBoxItem Content="OTRO" Foreground="Black"/>
+
+                            <ComboBox x:Name="comboBox1" 
+                                      Grid.Row="1"
+                                      Grid.Column="1"
+                                      Foreground="DarkGray" 
+                                      HorizontalAlignment="Right" 
+                                      Margin="0,54,395,0" 
+                                      VerticalAlignment="Top" 
+                                      Width="257" 
+                                      LostFocus="changeBlankTipo">
+
+                                <ComboBoxItem Content="Tipo" 
+                                              IsEnabled="False" 
+                                              Foreground="DarkGray"/>
+
+                                <ComboBoxItem Content="ARETE/PERFORACIONES" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="CICATRIZ" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="CIRCUNCISION" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="CORTES DECORATIVOS" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="DEFECTO FISICO" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="LUNARES O MANCHAS" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="MARCAS TEMPORALES" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="PROTESIS" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="TATUAJE" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="OTRO" 
+                                              Foreground="Black"/>
                             </ComboBox>
-                            <ComboBox x:Name="comboBox2" Foreground="DarkGray" HorizontalAlignment="Right" Margin="0,91,278,0" VerticalAlignment="Top" Width="257" LostFocus="changeBlankLado">
-                                <ComboBoxItem Content="Lado" IsEnabled="False"/>
-                                <ComboBoxItem Content="DERECHO" Foreground="Black"/>
-                                <ComboBoxItem Content="IZQUIERDO" Foreground="Black"/>
-                                <ComboBoxItem Content="NO ESPECIFICA" Foreground="Black"/>
-                                <ComboBoxItem Content="UNICO" Foreground="Black"/>
-                                <ComboBoxItem Content="ANTERIOR" Foreground="Black"/>
-                                <ComboBoxItem Content="POSTERIOR" Foreground="Black"/>
+                            <ComboBox x:Name="comboBox2" 
+                                      Foreground="DarkGray" 
+                                      HorizontalAlignment="Right" 
+                                      Margin="0,91,395,0" 
+                                      VerticalAlignment="Top" 
+                                      Width="257" 
+                                      LostFocus="changeBlankLado">
+
+                                <ComboBoxItem Content="Lado" 
+                                              IsEnabled="False"/>
+
+                                <ComboBoxItem Content="DERECHO" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="IZQUIERDO" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="NO ESPECIFICA" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="UNICO" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="ANTERIOR" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="POSTERIOR" 
+                                              Foreground="Black"/>
                             </ComboBox>
-                            <ComboBox x:Name="comboBox3" Foreground="DarkGray" HorizontalAlignment="Right" Margin="0,129,278,0" VerticalAlignment="Top" Width="257" LostFocus="changeBlankVista">
-                                <ComboBoxItem Content="Vista" IsEnabled="False"/>
-                                <ComboBoxItem Content="DORSAL" Foreground="Black"/>
-                                <ComboBoxItem Content="FRONTAL" Foreground="Black"/>
-                                <ComboBoxItem Content="INTERNO" Foreground="Black"/>
-                                <ComboBoxItem Content="EXTERNO" Foreground="Black"/>
-                                <ComboBoxItem Content="NO ESPECIFICA" Foreground="Black"/>
+
+                            <ComboBox x:Name="comboBox3" 
+                                      Foreground="DarkGray" 
+                                      HorizontalAlignment="Right" 
+                                      Margin="0,129,395,0" 
+                                      VerticalAlignment="Top" 
+                                      Width="257" 
+                                      LostFocus="changeBlankVista">
+                                <ComboBoxItem Content="Vista" 
+                                              IsEnabled="False"/>
+
+                                <ComboBoxItem Content="DORSAL" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="FRONTAL" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="INTERNO" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="EXTERNO" 
+                                              Foreground="Black"/>
+
+                                <ComboBoxItem Content="NO ESPECIFICA" 
+                                              Foreground="Black"/>
                             </ComboBox>
-                            <ComboBox x:Name="comboBox4" Foreground="DarkGray" HorizontalAlignment="Right" Margin="0,168,278,0" VerticalAlignment="Top" Width="257" LostFocus="changeBlankCantidad">
-                                <ComboBoxItem Content="Cantidad" IsEnabled="False"/>
+                            <ComboBox x:Name="comboBox4" 
+                                      Foreground="DarkGray" 
+                                      HorizontalAlignment="Right" 
+                                      Margin="0,168,395,0" 
+                                      VerticalAlignment="Top" 
+                                      Width="257" 
+                                      LostFocus="changeBlankCantidad">
+                                <ComboBoxItem Content="Cantidad" 
+                                              IsEnabled="False"/>
+
                                 <ComboBoxItem Content="1" Foreground="Black"/>
                                 <ComboBoxItem Content="2" Foreground="Black"/>
                                 <ComboBoxItem Content="3" Foreground="Black"/>
@@ -1744,11 +1871,47 @@
                                 <ComboBoxItem Content="8" Foreground="Black"/>
                                 <ComboBoxItem Content="9" Foreground="Black"/>
                             </ComboBox>
-                            <TextBox x:Name="DescriptionBox" Foreground="DarkGray" Margin="0,205,278,0" TextWrapping="Wrap" Text="Descripción" VerticalAlignment="Top" Height="106" GotFocus="ReplaceDescripcion" LostFocus="ReplaceBlankDescripcion" HorizontalAlignment="Right" Width="257"/>
-                            <Image x:Name="pictureBox4" Margin="0,18,73,0" Source="/media/images/senas/Minus loadIcon.png" MouseLeftButtonDown="image_userSelect" Height="161" VerticalAlignment="Top" HorizontalAlignment="Right" Width="189"/>
-                            <Button Style="{DynamicResource RoundedButtonStyle}" Content="Guardar" HorizontalAlignment="Right" Margin="0,205,105,0" VerticalAlignment="Top" Width="125" Height="34" RenderTransformOrigin="0,0.5" Background="{StaticResource CustomColorg}" Click="Button_Click"/>
-                            <Button Style="{DynamicResource ButtonStyle1}" Content="Borrar" HorizontalAlignment="Right" Margin="0,258,105,0" VerticalAlignment="Top" Width="125" Height="34" Background="{StaticResource CustomColorr}"/>
-                            <DataGrid x:Name="dataGridView1" Margin="10,324,74,32" AutoGenerateColumns="False">
+
+                            <TextBox x:Name="DescriptionBox" 
+                                     Foreground="DarkGray" 
+                                     Margin="0,205,395,0" 
+                                     TextWrapping="Wrap" 
+                                     Text="Descripción" 
+                                     VerticalAlignment="Top" 
+                                     Height="106" 
+                                     GotFocus="ReplaceDescripcion" 
+                                     LostFocus="ReplaceBlankDescripcion" 
+                                     HorizontalAlignment="Right" 
+                                     Width="257"/>
+
+                            <Image x:Name="pictureBox4" 
+                                   Margin="0,18,190,0" 
+                                   Source="/media/images/senas/Minus loadIcon.png" 
+                                   MouseLeftButtonDown="image_userSelect" 
+                                   Height="161" VerticalAlignment="Top" 
+                                   HorizontalAlignment="Right" Width="189"/>
+
+                            <Button Style="{DynamicResource RoundedButtonStyle}" 
+                                    Content="Guardar" 
+                                    HorizontalAlignment="Right" 
+                                    Margin="0,205,222,0" 
+                                    VerticalAlignment="Top" 
+                                    Width="125" Height="34" 
+                                    RenderTransformOrigin="0,0.5" 
+                                    Background="{StaticResource CustomColorg}" 
+                                    Click="Button_Click"/>
+
+                            <Button Style="{DynamicResource ButtonStyle1}" 
+                                    Content="Borrar" 
+                                    HorizontalAlignment="Right" 
+                                    Margin="0,258,222,0" 
+                                    VerticalAlignment="Top" 
+                                    Width="125" Height="34" 
+                                    Background="{StaticResource CustomColorr}"/>
+
+                            <DataGrid x:Name="dataGridView1" 
+                                      Margin="10,324,74,32" 
+                                      AutoGenerateColumns="False">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="No." Binding="{Binding No}"/>
                                     <DataGridTextColumn Header="Region del cuerpo" Binding="{Binding Region}"/>
@@ -1757,6 +1920,7 @@
                                     <DataGridTextColumn Header="Vista" Binding="{Binding Vista}"/>
                                     <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
                                     <DataGridTextColumn Header="Descripcion" Binding="{Binding Descripcion}"/>
+
                                     <DataGridTemplateColumn Header="Imagen">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
@@ -1767,7 +1931,9 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
+
                                     <DataGridTextColumn Header="Coordenadas" Binding="{Binding Coordenadas}"/>
+
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
@@ -1776,8 +1942,5 @@
 
             </Border>
         </Grid>
-
     </ScrollViewer>
-
-
 </UserControl>
