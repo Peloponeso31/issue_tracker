@@ -7,6 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Background="White" Padding="20" CornerRadius="10">
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" Text="{Binding Numero}"/>
+                <Button Content="Suma uno!" Command="{Binding AddRelayCommand}"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Inicio" Command="{Binding MostrarInicio}"/>
+                    <Button Content="Captura" Command="{Binding MostrarCaptura}"/>
+                    
+                </StackPanel>
+
+                <ContentControl Content="{Binding CurrentSubView}"/>
+            </StackPanel>
+        </Grid>
         
     </Border>
 </UserControl>

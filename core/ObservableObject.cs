@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 {
-    internal class ObservableObject : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

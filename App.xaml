@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz"
              xmlns:viewModel="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel"
              xmlns:view="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view"
+             
+             xmlns:Login="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.Login"
+             xmlns:LoginViews="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.Login"
              StartupUri="/windows/Login.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -13,6 +16,18 @@
                 <ResourceDictionary Source="/themes/UIComponents.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <!-- Aqui queda el binding implicito con el datacontext, incluso si el intellisense no lo denota.  -->
+            
+            <!-- Binds para la autenticacion. -->
+            <DataTemplate DataType="{x:Type Login:LoginViewModel}">
+                <LoginViews:Login/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type Login:RegistrarUsuarioViewModel}">
+                <LoginViews:RegistrarUsuario/>
+            </DataTemplate>
+
+
             <DataTemplate DataType="{x:Type viewModel:InicioViewModel}">
                 <view:Inicio/>
             </DataTemplate>
@@ -20,15 +35,13 @@
             <DataTemplate DataType="{x:Type viewModel:BusquedaViewModel}">
                 <view:Busqueda/>
             </DataTemplate>
-          
-            
-          
+
             <DataTemplate DataType="{x:Type viewModel:CapturaViewModel}">
                 <view:Captura/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
-                <view:Test/>
+            <DataTemplate DataType="{x:Type viewModel:ReportesViewModel}">
+                <view:Reportes/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

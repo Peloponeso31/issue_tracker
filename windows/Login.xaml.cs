@@ -32,29 +32,5 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows
         {
             InitializeComponent();
         }
-
-        private async void autenticar_click(object sender, RoutedEventArgs e)
-        {
-            var resultado = await core.HttpClientHandler.GetTokenRequest(email.Text.ToString(), password.Password.ToString());
-            
-            if (resultado.GetType() == typeof(Token))
-            {
-                var dashboard = new Dashboard();
-                dashboard.Show();
-                this.Close();
-            }
-            else if (resultado.GetType() == typeof(ErrorValidacion))
-            {
-                ErrorValidacion error = (ErrorValidacion)resultado;
-                this.MensajeDeError.Text = error.error;
-                this.MensajeDeError.Visibility = Visibility.Visible;
-            }
-            else if (resultado.GetType() == typeof(Error))
-            {
-                Error error = (Error)resultado;
-                this.MensajeDeError.Text = error.error;
-                this.MensajeDeError.Visibility = Visibility.Visible;
-            }
-        }
     }
 }

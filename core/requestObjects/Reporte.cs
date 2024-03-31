@@ -6,24 +6,53 @@ using System.Threading.Tasks;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects
 {
-    internal class ReporteData
+
+    public class Reportante
     {
         public int id { get; set; }
-        public int area_id { get; set; }
-        public string zona_estado { get; set; }
-        public int medio_id { get; set; }
-        public object tipo_desaparicon { get; set; }
-        public string estatus { get; set; }
-        public string fecha_desaparicion { get; set; }
-        public string fecha_percato { get; set; }
-        public string folio { get; set; }
-        public int hechos_desaparicion_id { get; set; }
-        public DateTime creado { get; set; }
-        public List<PersonaData> reportante { get; set; }
-        public List<PersonaData> desaparecido { get; set; }
+        public int reporte_id { get; set; }
+        public PersonaData persona { get; set; }
+        public int parentesco_id { get; set; }
+        public bool denuncia_anonima { get; set; }
+        public bool informacion_consentimiento { get; set; }
+        public bool informacion_exclusiva_busqueda { get; set; }
+        public bool publicacion_registro_nacional { get; set; }
+        public bool publicacion_boletin { get; set; }
+        public bool pertenencia_colectivo { get; set; }
+        public string nombre_colectivo { get; set; }
+        public string informacion_relevante { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime updated_at { get; set; }
+    }
+
+    public class Desaparecido
+    {
+        public int id { get; set; }
+        public int reporte_id { get; set; }
+        public PersonaData persona { get; set; }
+        public bool habla_espanhol { get; set; }
+        public bool sabe_leer { get; set; }
+        public bool sabe_escribir { get; set; }
+        public string url_boletin { get; set; }
+        public object folio { get; set; }
+    }
+    public class ReporteData
+    {
+        public int id { get; set; }
+        public int tipo_reporte_id { get; set; }
+        public int area_atiende_id { get; set; }
+        public int medio_conocimiento_id { get; set; }
+        public int zona_estado_id { get; set; }
+        public int hipotesis_oficial_id { get; set; }
+        public string tipo_desaparicion { get; set; }
+        public object fecha_localizacion { get; set; }
+        public object sintesis_localizacion { get; set; }
+        public object clasificacion_persona { get; set; }
+        public List<Reportante> reportantes { get; set; }
+        public List<Desaparecido> desaparecidos { get; set; }
     }
     
-    internal class Reporte
+    public class Reporte
     {
         public List<ReporteData> data { get; set; }
     }

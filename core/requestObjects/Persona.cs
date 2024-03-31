@@ -7,7 +7,7 @@ using System.Windows.Documents;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects
 {
-    internal class PersonaData
+    public class PersonaData
     {
         public int id { get; set; }
         public string? nombre { get; set; }

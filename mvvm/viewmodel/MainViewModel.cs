@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,61 +16,38 @@ using System.Windows.Input;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 {
-    class MainViewModel : ObservableObject
+    public class MainViewModel : ObservableObject
     {
         public RelayCommand InicioRelayCommand { get; set; }
         public RelayCommand BusquedaRelayCommand { get; set; }
-        public RelayCommand SenasParticularesCommand { get; set; }
-        public RelayCommand CapturaRelayCommand { get; set; }
-        public RelayCommand TestRelayCommand { get; set; }
 
         public InicioViewModel PantallaInicio { get; set; }
         public BusquedaViewModel PantallaBusqueda { get; set; }
-        public SenasParticularesViewModel PantallaSenasParticulares { get; set; }
-        public CapturaViewModel PantallaCaptura { get; set; }
-        public TestViewModel PantallaTest { get; set; }
+        public ReportesViewModel PantallaReportes{ get; set; }
 
-        private object _currentView;
+        public RelayCommand TestRelayCommand { get; set; }
 
-        public object CurrentView
+        private ObservableObject _currentView;
+        public ObservableObject CurrentView
         {
-            get { return _currentView; }
+            get
+            {
+                return _currentView;
+            }
             set
             {
-                this._currentView = value;
-                OnPropertyChanged();
+                _currentView = value;
+                Console.WriteLine(nameof(CurrentView));
+                OnPropertyChanged(nameof(CurrentView));
             }
         }
 
-        private ObservableCollection<PhoneNumber> _phoneNumbers = new ObservableCollection<PhoneNumber>();
-        public ObservableCollection<PhoneNumber> PhoneNumbers
-        {
-            get { return _phoneNumbers; }
-            set
-            {
-                if (_phoneNumbers != value)
-                {
-                    _phoneNumbers = value;
-                    OnPropertyChanged(nameof(PhoneNumbers));
-                }
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        public ICommand AddPhoneNumberCommand { get; }
         public MainViewModel()
         {
             PantallaInicio = new InicioViewModel();
             PantallaBusqueda = new BusquedaViewModel();
-            PantallaCaptura = new CapturaViewModel();
-            AddPhoneNumberCommand = new DelegateCommand(AddPhoneNumber);
-            PantallaTest = new TestViewModel();
-            PantallaSenasParticulares = new SenasParticularesViewModel();
+
+            PantallaReportes = new ReportesViewModel(this);
 
             CurrentView = PantallaInicio;
 
@@ -83,25 +61,10 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
                 CurrentView = PantallaBusqueda;
             });
 
-            SenasParticularesCommand = new RelayCommand(o =>
-            {
-                CurrentView = PantallaSenasParticulares;
-            });
-
-            CapturaRelayCommand = new RelayCommand(o =>
-            {
-                CurrentView = PantallaCaptura;
-            });
-
             TestRelayCommand = new RelayCommand(o =>
             {
-                CurrentView = PantallaTest;
+                CurrentView = PantallaReportes;
             });
-        }
-
-        private void AddPhoneNumber()
-        {
-            PhoneNumbers.Add(new PhoneNumber());
         }
     }
 }

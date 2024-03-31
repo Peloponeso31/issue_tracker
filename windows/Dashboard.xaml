@@ -42,6 +42,7 @@
                            Margin="30,5,5,5"> 
                     Opciones: 
                 </TextBlock>
+                
                 <RadioButton Content="Inicio"
                              Height="50"
                              Foreground="White"
@@ -50,20 +51,6 @@
                              Command="{Binding InicioRelayCommand}"
                              Style="{StaticResource MenuButtonTheme}"/>
 
-                <RadioButton Content="Captura"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Command="{Binding CapturaRelayCommand}"
-                             Style="{StaticResource MenuButtonTheme}"/>
-
-                <RadioButton Content="Señas particulares"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Command="{Binding SenasParticularesCommand}"
-                             Style="{StaticResource MenuButtonTheme}"/>
-                
                 <RadioButton Content="Reportes de desaparicion"
                              Height="50"
                              Foreground="White"
