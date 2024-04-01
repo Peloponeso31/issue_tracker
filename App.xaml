@@ -32,6 +32,15 @@
             <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
                 <view:Test/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:PestanaReporteViewModel}">
+                <view:PestanaReporteView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:OtraPestanaViewModel}">
+                <view:OtraPestanaView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

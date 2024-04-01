@@ -1,5 +1,4 @@
-﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 {
     /// <summary>
-    /// Interaction logic for Test.xaml
+    /// Interaction logic for OtraPestanaView.xaml
     /// </summary>
-    public partial class Test : UserControl
+    public partial class OtraPestanaView : UserControl
     {
-        public Test()
+        public OtraPestanaView()
         {
             InitializeComponent();
         }
