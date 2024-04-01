@@ -1,4 +1,6 @@
-﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel;
+﻿using static Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.SenasParticularesViewModel;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
 {
@@ -39,23 +42,8 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
             dataGridView1.ItemsSource = dataRegis;
 
             }
-            public class caracDato //Caracteristicas de los datos para la tabla
-            {
-                public int No { get; set; }
-                public string Region { get; set; }
-                public string Tipo { get; set; }
-                public string Lado { get; set; }
-                public string Vista { get; set; }
-                public string Cantidad { get; set; }
-                public string Descripcion { get; set; }
-                public string RutaImagen { get; set; }
-                public string Coordenadas { get; set; }
-            }
+            
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
         private void addBodyData() //Obtener y añadir los datos a la tabla
             {
                 int no = dataTableCounter;
