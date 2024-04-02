@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz"
              xmlns:viewModel="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel"
              xmlns:view="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view"
+             xmlns:ViewsFormularioReportes="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas"
+             xmlns:ViewModelsFormularioReportes="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas"
              StartupUri="/windows/Login.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -29,6 +31,10 @@
 
             <DataTemplate DataType="{x:Type viewModel:TestViewModel}">
                 <view:Test/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaSenasParticularesViewModel}">
+                <ViewsFormularioReportes:PestanaSenasParticularesView/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

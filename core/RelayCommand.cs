@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 {
-    internal class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
