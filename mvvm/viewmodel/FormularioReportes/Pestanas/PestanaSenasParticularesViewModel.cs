@@ -11,6 +11,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 {
     public class PestanaSenasParticularesViewModel : ObservableObject
     {
+		private FormularioReportesViewModel _formularioReportesViewModel;
 		private string _color;
 		public string Color
 		{
@@ -40,8 +41,9 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 			}
 		}
 
-		public PestanaSenasParticularesViewModel()
+		public PestanaSenasParticularesViewModel(FormularioReportesViewModel formularioReportesViewModel)
         {
+			_formularioReportesViewModel = formularioReportesViewModel;
 			CargarCatalogos();
         }
 

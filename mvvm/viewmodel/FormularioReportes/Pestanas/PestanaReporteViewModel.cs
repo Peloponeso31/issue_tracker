@@ -1,4 +1,5 @@
 ﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 {
     class PestanaReporteViewModel : ObservableObject
     {
-        private readonly TestViewModel testViewModel;
-        public PestanaReporteViewModel(TestViewModel testViewModel)
+        private readonly FormularioReportesViewModel _formularioReportesViewModel;
+        public PestanaReporteViewModel(FormularioReportesViewModel formularioReportesViewModel)
         {
-            this.testViewModel = testViewModel;
+            this._formularioReportesViewModel = formularioReportesViewModel;
         }
     }
 }

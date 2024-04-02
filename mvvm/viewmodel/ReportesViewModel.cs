@@ -1,5 +1,6 @@
 ﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,7 +37,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 
             CaprutarRelayCommand = new RelayCommand(o =>
             {
-                _mainViewModel.CurrentView = new CapturaViewModel();
+                _mainViewModel.CurrentView = new FormularioReportesViewModel();
             });
         }
 

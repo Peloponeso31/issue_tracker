@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view
+namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas
 {
     /// <summary>
-    /// Interaction logic for OtraPestanaView.xaml
+    /// Interaction logic for PestanaReporteView.xaml
     /// </summary>
-    public partial class OtraPestanaView : UserControl
+    public partial class PestanaReporteView : UserControl
     {
-        public OtraPestanaView()
+        public PestanaReporteView()
         {
             InitializeComponent();
         }

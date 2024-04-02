@@ -2,13 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz"
-             xmlns:viewModel="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel"
+             
              xmlns:view="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view"
-             xmlns:ViewsFormularioReportes="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas"
-             xmlns:ViewModelsFormularioReportes="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas"
-
+             xmlns:viewModel="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel"
+            
              xmlns:Login="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.Login"
              xmlns:LoginViews="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.Login"
+             
+             xmlns:FormularioReportesViewModel="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes"
+             xmlns:FormularioReportesView=     "clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes"
+             
+             xmlns:ViewsFormularioReportes=     "clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas"
+             xmlns:ViewModelsFormularioReportes="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas"
+
              StartupUri="/windows/Login.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -42,20 +48,21 @@
                 <view:Captura/>
             </DataTemplate>
 
+            <!-- Binds para los reportes -->
             <DataTemplate DataType="{x:Type viewModel:ReportesViewModel}">
                 <view:Reportes/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type FormularioReportesViewModel:FormularioReportesViewModel}">
+                <FormularioReportesView:FormularioReportesView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaSenasParticularesViewModel}">
                 <ViewsFormularioReportes:PestanaSenasParticularesView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:PestanaReporteViewModel}">
-                <view:PestanaReporteView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewModel:OtraPestanaViewModel}">
-                <view:OtraPestanaView/>
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaReporteViewModel}">
+                <ViewsFormularioReportes:PestanaReporteView/>
             </DataTemplate>
 
         </ResourceDictionary>
