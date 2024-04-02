@@ -9,12 +9,12 @@
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="45*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -22,22 +22,23 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" 
                    Grid.Column="1">
-            <Button Content="Reporte" Command="{Binding ReportesRelayCommand}"/>
-            <Button Content="Otra pestaña" Command="{Binding OtraPestanaRelayCommand}"/>
-            <Button Content="Y otra pestaña"/>
-            <Button Content="Otra pestaña"/>
-            <Button Content="Y otra pestaña"/>
-            <Button Content="Otra pestaña"/>
-            <Button Content="Y otra pestaña"/>
-            <Button Content="Otra pestaña"/>
-            <Button Content="Y otra pestaña"/>
-            <Button Content="Otra pestaña"/>
-            <Button Content="Y otra pestaña"/>
+            <Button Content="Reporte" Command="{Binding ReportesRelayCommand}"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Reportante" Command="{Binding OtraPestanaRelayCommand}" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Persona Desaparecida"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Media Afiliación"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Prenda de Vestir"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Señas Particulares" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Condiciones de Vulnerabilidad"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Información de Desaparición"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Localización"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Contexto" Style="{StaticResource MenuItemButton}" />
+            <Button Content="Control OGPI" Style="{StaticResource MenuItemButton}" />
+            
         </WrapPanel>
 
         <Grid Grid.Row="1" 
               Grid.ColumnSpan="3" 
-              Background="Aqua">
+              Background="White"    >
 
             <ContentControl Content="{Binding PestanaActual}"/>
 
