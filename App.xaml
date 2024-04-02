@@ -20,9 +20,7 @@
             <DataTemplate DataType="{x:Type viewModel:BusquedaViewModel}">
                 <view:Busqueda/>
             </DataTemplate>
-          
             
-          
             <DataTemplate DataType="{x:Type viewModel:CapturaViewModel}">
                 <view:Captura/>
             </DataTemplate>
