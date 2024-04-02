@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
