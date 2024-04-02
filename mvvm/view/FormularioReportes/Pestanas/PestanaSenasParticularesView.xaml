@@ -33,7 +33,7 @@
             <Image Source="/media/images/senas/Cuerpo MapingSide.png"
                    Stretch="Uniform"/>
 
-            <Image Source="C:\Users\aerf0\source\repos\desktop_cebv\media\images\senas\RegionCuerpoColorMejorado.png"
+            <Image Source="/media/images/senas/RegionCuerpoColorMejorado.png"
                    x:Name="RegionCuerpoImage"
                    Stretch="Uniform"/>
             
