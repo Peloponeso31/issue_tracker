@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 {
@@ -94,6 +95,21 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             var jsonResponse = await response.Content.ReadAsStringAsync();
             Reporte reportes = JsonSerializer.Deserialize<Reporte>(jsonResponse);
             return reportes;
+        }
+
+        public static async Task<Object> GetRegionCuerpo()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/catalogos/region_cuerpo");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            List<RegionCuerpo> regiones_cuerpo = JsonSerializer.Deserialize<List<RegionCuerpo>>(jsonResponse);
+            Dictionary<string, RegionCuerpo> dic = new Dictionary<string, RegionCuerpo>();
+
+            foreach (var region in regiones_cuerpo)
+            {
+                dic.Add(region.color, region);
+            }
+
+            return dic;
         }
     }
 }
