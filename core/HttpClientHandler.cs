@@ -15,6 +15,7 @@ using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubicaciones;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 {
@@ -107,6 +108,22 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             foreach (var region in regiones_cuerpo)
             {
                 dic.Add(region.color, region);
+            }
+
+            return dic;
+        }
+
+        public static async Task<Object> GetEstados()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/estados");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            Estados estados = JsonSerializer.Deserialize<Estados>(jsonResponse);
+            Dictionary<string, EstadoData> dic = new Dictionary<string, EstadoData>();
+
+            foreach (var estado in estados.data)
+            {
+                dic.Add(estado.id, estado);
             }
 
             return dic;

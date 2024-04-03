@@ -9,7 +9,7 @@
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="45*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -18,10 +18,24 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         
-        <WrapPanel Grid.Row="0" Grid.Column="1">
-            <Button Content="Reportes" Command="{Binding PestanaReporteRelayCommand}"/>
-            <Button Content="Señas Particulares" Command="{Binding PestanaSenasParticularesRelayCommand}"/>
+        <WrapPanel Orientation="Horizontal"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center" 
+             Grid.Column="1">
+            <Button Content="Reporte" Command="{Binding PestanaReporteRelayCommand}"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Reportante"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Persona Desaparecida"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Media Afiliación"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Prenda de Vestir"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Señas Particulares" Command="{Binding PestanaSenasParticularesRelayCommand}" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Condiciones de Vulnerabilidad"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Información de Desaparición"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Localización"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Contexto" Style="{StaticResource MenuItemButton}" />
+            <Button Content="Control OGPI" Style="{StaticResource MenuItemButton}" />
+
         </WrapPanel>
+
 
         <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
             <ContentControl Content="{Binding PestanaActual}"/>
