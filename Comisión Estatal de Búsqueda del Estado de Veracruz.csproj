@@ -42,4 +42,7 @@
     <PackageReference Include="System.Drawing.Common" Version="8.0.3" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="mvvm\model\General.cs" />
+  </ItemGroup>
 </Project>

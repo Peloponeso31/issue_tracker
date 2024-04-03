@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Informaciones;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas
 {
@@ -33,10 +34,30 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
             }
         }
 
+        /**
+         * Catalogo de Medios
+         */
+        private Dictionary<int, TipoMedioData> _tiposMedios;
+        public Dictionary<int, TipoMedioData> TiposMedios
+        {
+            get
+            {
+                return _tiposMedios;
+            }
+            set
+            {
+                _tiposMedios = value;
+                OnPropertyChanged();
+            }
+        }
+
         public async void CargarEstado()
         {
             var estados = await HttpClientHandler.GetEstados();
             Estados = (Dictionary<string, EstadoData>)estados;
+
+            var tiposMedios = await HttpClientHandler.GetTiposMedios();
+            TiposMedios = (Dictionary<int, TipoMedioData>)tiposMedios;
         }
     }
 }

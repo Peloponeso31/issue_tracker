@@ -15,6 +15,7 @@ using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Informaciones;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubicaciones;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
@@ -124,6 +125,22 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             foreach (var estado in estados.data)
             {
                 dic.Add(estado.id, estado);
+            }
+
+            return dic;
+        }
+
+        public static async Task<object> GetTiposMedios()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/tipos-medios");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            TiposMedios tiposMedios = JsonSerializer.Deserialize<TiposMedios>(jsonResponse);
+            Dictionary<int, TipoMedioData> dic = new Dictionary<int, TipoMedioData>();
+
+            foreach (var tipoMedio in tiposMedios.data)
+            {
+                dic.Add(tipoMedio.id, tipoMedio);
             }
 
             return dic;
