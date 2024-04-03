@@ -59,7 +59,7 @@
                                 </ComboBox>
 
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,5" Width="715"> MANIFIESTA QUE LA INFORMACIÓN QUE APORTE PARA EL RNO SEA UTILIZADA EXCLUSIVAMENTE PARA LA BÚSQUEDA E IDENTIFICACIÓN DE LA PERSONA 
-       DESAPARECIDA O NO LOCALIZADA.:</TextBlock>
+                                           DESAPARECIDA O NO LOCALIZADA.:</TextBlock>
                                 <ComboBox Margin="0,0,0,5" MinWidth="150" Width="698">
                                     <!-- Agregar elementos al ComboBox -->
                                     <ComboBoxItem Content="SI"/>
@@ -100,11 +100,13 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="left" Width="720">
                                 <StackPanel>
                                     <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="248" > ESTADO DE DONDE PROVIENE EL REPORTE:</TextBlock>
-                                    <ComboBox Margin="10,0,0,0" MinWidth="170">
-                                        <!-- Agregar elementos al ComboBox -->
-                                        <ComboBoxItem Content="SI"/>
-                                        <ComboBoxItem Content="NO"/>
-                                    </ComboBox>
+                                    <ComboBox Margin="10,0,0,0" 
+                                              MinWidth="170" 
+                                              SelectedValuePath="Key"
+                                              DisplayMemberPath="Value"
+                                              ItemsSource="{Binding Estados}"/>
+
+
                                 </StackPanel>
                             </StackPanel>
                             <!-- Línea de separación horizontal -->
