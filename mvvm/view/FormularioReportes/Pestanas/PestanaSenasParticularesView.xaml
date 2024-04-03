@@ -79,42 +79,16 @@
 
         <StackPanel Grid.Column="2" Grid.Row="0">
             <Image Source="/media/images/senas/Minus loadIcon.png" 
-                   Height="161" Width="189"/>
-            
-            <Button Content="Guardar"/>
+                   Height="161"/>
 
+            <Button Content="Guardar" Command="{Binding GuardarRelayCommand}"/>
+            <Button Content="Exportar"/>
             <Button Content="Borrar"/>
         </StackPanel>
-
-
 
         <DataGrid Grid.Row="1"
                   Grid.Column="0"
                   Grid.ColumnSpan="3"
-                  AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="No." Binding="{Binding No}"/>
-                <DataGridTextColumn Header="Region del cuerpo" Binding="{Binding Region}"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}"/>
-                <DataGridTextColumn Header="Lado" Binding="{Binding Lado}"/>
-                <DataGridTextColumn Header="Vista" Binding="{Binding Vista}"/>
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
-                <DataGridTextColumn Header="Descripcion" Binding="{Binding Descripcion}"/>
-
-                <DataGridTemplateColumn Header="Imagen">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding RutaImagen}" 
-           Stretch="Uniform"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Center"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTextColumn Header="Coordenadas" Binding="{Binding Coordenadas}"/>
-
-            </DataGrid.Columns>
-        </DataGrid>
+                  ItemsSource="{Binding SenasParticularesData}"/>
     </Grid>
 </UserControl>
