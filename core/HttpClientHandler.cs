@@ -145,5 +145,21 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 
             return dic;
         }
+        
+        public static async Task<object> GetMedios()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/medios");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            Medios medios = JsonSerializer.Deserialize<Medios>(jsonResponse);
+            Dictionary<int, MedioData> dic = new Dictionary<int, MedioData>();
+
+            foreach (var medio in medios.data)
+            {
+                dic.Add(medio.id, medio);
+            }
+
+            return dic;
+        }
     }
 }

@@ -50,6 +50,20 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
                 OnPropertyChanged();
             }
         }
+        
+        private Dictionary<int, MedioData> _medios;
+        public Dictionary<int, MedioData> Medios
+        {
+            get
+            {
+                return _medios;
+            }
+            set
+            {
+                _medios = value;
+                OnPropertyChanged();
+            }
+        }
 
         public async void CargarEstado()
         {
@@ -58,6 +72,9 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 
             var tiposMedios = await HttpClientHandler.GetTiposMedios();
             TiposMedios = (Dictionary<int, TipoMedioData>)tiposMedios;
+            
+            var medios = await HttpClientHandler.GetMedios();
+            Medios = (Dictionary<int, MedioData>)medios;
         }
     }
 }

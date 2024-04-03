@@ -96,11 +96,12 @@
                                 </StackPanel>
                                 <StackPanel Width="238">
                                     <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0"> MEDIO DE CONOCIMIENTO ESPECÍFICO:</TextBlock>
-                                    <ComboBox Margin="10,0,0,0" MinWidth="150">
-                                        <!-- Agregar elementos al ComboBox -->
-                                        <ComboBoxItem Content="SI" />
-                                        <ComboBoxItem Content="NO" />
-                                    </ComboBox>
+                                    <ComboBox
+                                        Margin="10,0,0,0"
+                                        MinWidth="150"
+                                        SelectedValuePath="Key"
+                                        DisplayMemberPath="Value"
+                                        ItemsSource="{Binding Medios}" />
                                 </StackPanel>
                                 <StackPanel>
                                     <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0"> DEPENDENCIA DE ORIGEN:</TextBlock>
