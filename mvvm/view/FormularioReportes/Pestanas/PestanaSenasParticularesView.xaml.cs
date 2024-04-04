@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas
 {
@@ -31,19 +21,12 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.Formul
             if (this.DataContext != null) 
             {
                 Point posicion = e.GetPosition(RegionCuerpoImage);
-                Color color = this.GetPixelColor(RegionCuerpoImage, posicion); 
+                Color colorRegionCuerpo = this.GetPixelColor(RegionCuerpoImage, posicion);
+                Color colorLado = this.GetPixelColor(LadoImage, posicion);
 
-                ((dynamic)this.DataContext).Color = color.ToString();
+                ((dynamic)this.DataContext).ColorRegionCuerpo = colorRegionCuerpo.ToString();
+                ((dynamic)this.DataContext).ColorLado = colorLado.ToString();
             }
-        }
-
-        public static double Map(double value, double fromSource, double toSource, double fromTarget, double toTarget)
-        {
-            // Calculate the ratio of the value's position within the source range
-            double ratio = (value - fromSource) / (toSource - fromSource);
-
-            // Map the ratio to the target range and return the result
-            return fromTarget + ratio * (toTarget - fromTarget);
         }
 
         private Color GetPixelColor(Image image, Point position)
@@ -64,6 +47,5 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.Formul
             // Return the pixel color as a Color object
             return Color.FromRgb(pixelColor[2], pixelColor[1], pixelColor[0]);
         }
-
     }
 }

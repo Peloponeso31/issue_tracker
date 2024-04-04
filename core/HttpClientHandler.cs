@@ -110,5 +110,34 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 
             return dic;
         }
+        public static async Task<Object> GetTipo()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/catalogos/tipo");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            List<TipoSenas> tipo = JsonSerializer.Deserialize<List<TipoSenas>>(jsonResponse);
+            Dictionary<string, TipoSenas> dic_tipo = new Dictionary<string, TipoSenas>();
+
+            foreach (var tip in tipo)
+            {
+                dic_tipo.Add(tip.nombre, tip);
+            }
+
+            return dic_tipo;
+        }
+
+        public static async Task<Object> GetLado()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/catalogos/lado");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+            List<LadoSenas> lado = JsonSerializer.Deserialize<List<LadoSenas>>(jsonResponse);
+            Dictionary<string, LadoSenas> dic_lado = new Dictionary<string, LadoSenas>();
+
+            foreach (var lad in lado)
+            {
+                dic_lado.Add(lad.color, lad);
+            }
+
+            return dic_lado;
+        }
     }
 }

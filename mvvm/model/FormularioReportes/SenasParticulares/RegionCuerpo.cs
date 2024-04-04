@@ -17,4 +17,28 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Formu
             return nombre;
         }
     }
+    public class TipoSenas
+    {
+        public int? id { get; set; }
+
+        public string? nombre { get; set; }
+
+        public override string ToString()
+        {
+            return nombre;
+        }
+    }
+        public class LadoSenas
+        {
+            public int? id { get; set; }
+
+            public string? nombre { get; set; }
+
+            public string? color { get; set; }    
+
+            public override string ToString()
+            {
+                return nombre;
+            }
+        }
 }

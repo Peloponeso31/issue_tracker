@@ -2,6 +2,7 @@ using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas;
 using Prism.Commands;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         public RelayCommand CapturaRelayCommand { get; set; }
         public RelayCommand TestRelayCommand { get; set; }
 
-        public InicioViewModel PantallaInicio { get; set; }
+        public PestanaSenasParticularesViewModel PantallaInicio { get; set; }
         public BusquedaViewModel PantallaBusqueda { get; set; }
         public SenasParticularesViewModel PantallaSenasParticulares { get; set; }
         public CapturaViewModel PantallaCaptura { get; set; }
@@ -64,7 +65,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         public ICommand AddPhoneNumberCommand { get; }
         public MainViewModel()
         {
-            PantallaInicio = new InicioViewModel();
+            PantallaInicio = new PestanaSenasParticularesViewModel();
             PantallaBusqueda = new BusquedaViewModel();
             PantallaCaptura = new CapturaViewModel();
             AddPhoneNumberCommand = new DelegateCommand(AddPhoneNumber);

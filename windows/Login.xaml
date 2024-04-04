@@ -27,7 +27,7 @@
                     Correo electronico:
                 </TextBlock>
                 
-                <TextBox x:Name="email" Margin="5" Padding="5" Width="196">
+                <TextBox x:Name="email" Margin="5" Padding="5" Width="196" Text="test@example.com">
                     <TextBox.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
@@ -40,7 +40,7 @@
                     Contraseña:
                 </TextBlock>
 
-                <PasswordBox x:Name="password" Width="196" Margin="5" Padding="5">
+                <PasswordBox x:Name="password" Width="196" Margin="5" Padding="5 " >
                     <PasswordBox.Style>
                         <Style TargetType="{x:Type PasswordBox}">
                             <Style.Resources>
