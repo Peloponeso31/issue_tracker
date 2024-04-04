@@ -89,6 +89,6 @@
         <DataGrid Grid.Row="1"
                   Grid.Column="0"
                   Grid.ColumnSpan="3"
-                  ItemsSource="{Binding SenasParticularesData}"/>
+                  ItemsSource="{Binding SenasParticularesTabla}"/>
     </Grid>
 </UserControl>

@@ -1,19 +1,15 @@
 ﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas
 {
     public class PestanaSenasParticularesViewModel : ObservableObject
     {
 		private FormularioReportesViewModel _formularioReportesViewModel;
+
 		private string _color;
 		public string Color
 		{
@@ -50,18 +46,21 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
         }
 
 		public ObservableCollection<SenasParticularesData> SenasParticularesData { get; set; }
+        public ObservableCollection<SenasParticularesTabla> SenasParticularesTabla { get; set; }
 
-		public RelayCommand GuardarRelayCommand { get; set; }
+        public RelayCommand GuardarRelayCommand { get; set; }
 
 		public async void CargarCatalogos()
 		{
             var regiones_cuerpo = await HttpClientHandler.GetRegionCuerpo();
 			RegionCuerpo = (Dictionary<string, RegionCuerpo>)regiones_cuerpo;
 			SenasParticularesData = new ObservableCollection<SenasParticularesData>();
+			SenasParticularesTabla = new ObservableCollection<SenasParticularesTabla>();
 
 			GuardarRelayCommand = new RelayCommand(o =>
 			{
 				SenasParticularesData senas = new SenasParticularesData(1, (int)RegionCuerpo[Color].id, 1, 1, 1, 1, "lorem ipsum", "https://www.url.com");
+				SenasParticularesTabla.Add(new SenasParticularesTabla((string)RegionCuerpo[Color].nombre, "", "", "", 1, "", ""));
 				SenasParticularesData.Add(senas);
 			});
         }
