@@ -1,12 +1,6 @@
 ﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
-using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubicaciones;
-using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Informaciones;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas
@@ -18,7 +12,6 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
         {
             this._formularioReportesViewModel = formularioReportesViewModel;
             CargarEstado();
-            CargarTipoRepor();
         }
 
         private Dictionary<string, EstadoData> _estados;
@@ -66,37 +59,33 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
             }
         }
 
+        private Dictionary<int, TipoReporteData> _tiposReportes;
+        public Dictionary<int, TipoReporteData> TiposReportes
+        {
+            get
+            {
+                return _tiposReportes;
+            }
+            set
+            {
+                _tiposReportes = value;
+                OnPropertyChanged();
+            }
+        }
+        
         public async void CargarEstado()
         {
             var estados = await HttpClientHandler.GetEstados();
             Estados = (Dictionary<string, EstadoData>)estados;
+            
+            var tiposReportes = await HttpClientHandler.GetTiposReportes();
+            TiposReportes = (Dictionary<int, TipoReporteData>)tiposReportes;
 
             var tiposMedios = await HttpClientHandler.GetTiposMedios();
             TiposMedios = (Dictionary<int, TipoMedioData>)tiposMedios;
             
             var medios = await HttpClientHandler.GetMedios();
             Medios = (Dictionary<int, MedioData>)medios;
-        }
-
-
-        private Dictionary<string, CatalogoData> _catalogos;
-        public Dictionary<string, CatalogoData> Catalogos
-        {
-            get
-            {
-                return _catalogos;
-            }
-            set
-            {
-                _catalogos = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public async void CargarTipoRepor()
-        {
-            var catalogos = await HttpClientHandler.GetTipoRepor();
-            Catalogos = (Dictionary<string, CatalogoData>)catalogos;
         }
     }
 }
