@@ -65,6 +65,10 @@
                 <ViewsFormularioReportes:PestanaReporteView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaReportanteViewModel}">
+                <ViewsFormularioReportes:PestanaReportanteView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

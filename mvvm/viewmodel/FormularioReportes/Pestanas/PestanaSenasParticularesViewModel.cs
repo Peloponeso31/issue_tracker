@@ -52,5 +52,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
             var regiones_cuerpo = await HttpClientHandler.GetRegionCuerpo();
 			RegionCuerpo = (Dictionary<string, RegionCuerpo>)regiones_cuerpo;
         }
+
+
     }
 }

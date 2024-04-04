@@ -23,7 +23,7 @@
              VerticalAlignment="Center" 
              Grid.Column="1">
             <Button Content="Reporte" Command="{Binding PestanaReporteRelayCommand}"  Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Reportante"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Reportante"  Style="{StaticResource MenuItemButton}" Command="{Binding PestanaReportanteRelayCommand}" />
             <Button Content="Persona Desaparecida"  Style="{StaticResource MenuItemButton}"/>
             <Button Content="Media Afiliación"  Style="{StaticResource MenuItemButton}"/>
             <Button Content="Prenda de Vestir"  Style="{StaticResource MenuItemButton}"/>

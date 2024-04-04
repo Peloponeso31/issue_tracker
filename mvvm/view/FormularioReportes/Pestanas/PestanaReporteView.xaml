@@ -24,7 +24,11 @@
                             </StackPanel>
                             <StackPanel>
                                 <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> TIPO DE FOLIO:</TextBlock>
-                                <TextBox Style="{DynamicResource TextBoxStyle}" Margin="10,0,0,0" MinWidth="150"></TextBox>
+                                <ComboBox Margin="10,0,0,0" MinWidth="180"  
+                                SelectedValuePath="Key"
+                                DisplayMemberPath="Value"
+                                ItemsSource="{Binding Catalogos}"/>
+                                
                             </StackPanel>
                             <StackPanel>
                                 <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> AÑO DE REGISTRO:</TextBlock>
@@ -32,12 +36,8 @@
                             </StackPanel>
                             <StackPanel>
                                 <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }">NOMBRE DE QUIEN SOLICITA EL FOLIO:</TextBlock>
-                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="31" SelectedItem="n" >
-                                    <!-- Agregar elementos al ComboBox -->
-                                    <ComboBoxItem Content="SI"/>
-                                    <ComboBoxItem Content="NO"/>
-                                    <ComboBoxItem Content="NO ESPECIFICA"/>
-                                </ComboBox>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="31" SelectedItem="n" />
+
                             </StackPanel>
                             <StackPanel>
                                 <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }">FOLIO CEBV:</TextBlock>

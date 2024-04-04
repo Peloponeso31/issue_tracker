@@ -12,8 +12,9 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
     {
         private readonly PestanaReporteViewModel _pestanaReporte;
         private readonly PestanaSenasParticularesViewModel _pestanaSenasParticulares;
+        private readonly PestanaReportanteViewModel _pestanaReportante;
 
-		private ObservableObject _pestanaActual;
+        private ObservableObject _pestanaActual;
 		public ObservableObject PestanaActual
 		{
 			get
@@ -29,14 +30,16 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 
 		public RelayCommand PestanaReporteRelayCommand { get; set; }
 		public RelayCommand PestanaSenasParticularesRelayCommand { get; set; }
+        public RelayCommand PestanaReportanteRelayCommand { get; set; }
 
 
         public FormularioReportesViewModel()
         {
             _pestanaReporte = new PestanaReporteViewModel(this);
 			_pestanaSenasParticulares = new PestanaSenasParticularesViewModel(this);
+            _pestanaReportante = new PestanaReportanteViewModel(this);
 
-			PestanaActual = _pestanaReporte;
+            PestanaActual = _pestanaReporte;
 
 			PestanaReporteRelayCommand = new RelayCommand(o =>
 			{
@@ -46,6 +49,11 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
             PestanaSenasParticularesRelayCommand = new RelayCommand(o =>
             {
 				PestanaActual = _pestanaSenasParticulares;
+            });
+
+            PestanaReportanteRelayCommand = new RelayCommand(o =>
+            {
+                PestanaActual = _pestanaReportante;
             });
         }
     }

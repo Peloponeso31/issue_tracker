@@ -17,6 +17,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
         {
             this._formularioReportesViewModel = formularioReportesViewModel;
             CargarEstado();
+            CargarTipoRepor();
         }
 
         private Dictionary<string, EstadoData> _estados;
@@ -37,6 +38,27 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
         {
             var estados = await HttpClientHandler.GetEstados();
             Estados = (Dictionary<string, EstadoData>)estados;
+        }
+
+
+        private Dictionary<string, CatalogoData> _catalogos;
+        public Dictionary<string, CatalogoData> Catalogos
+        {
+            get
+            {
+                return _catalogos;
+            }
+            set
+            {
+                _catalogos = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public async void CargarTipoRepor()
+        {
+            var catalogos = await HttpClientHandler.GetTipoRepor();
+            Catalogos = (Dictionary<string, CatalogoData>)catalogos;
         }
     }
 }
