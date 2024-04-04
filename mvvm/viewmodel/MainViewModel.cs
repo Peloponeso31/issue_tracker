@@ -2,6 +2,7 @@ using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas;
 using Prism.Commands;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
         public RelayCommand InicioRelayCommand { get; set; }
         public RelayCommand BusquedaRelayCommand { get; set; }
 
-        public InicioViewModel PantallaInicio { get; set; }
+        public PestanaSenasParticularesViewModel PantallaInicio { get; set; }
         public BusquedaViewModel PantallaBusqueda { get; set; }
         public ReportesViewModel PantallaReportes{ get; set; }
 
@@ -44,7 +45,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 
         public MainViewModel()
         {
-            PantallaInicio = new InicioViewModel();
+            PantallaInicio = new PestanaSenasParticularesViewModel();
             PantallaBusqueda = new BusquedaViewModel();
 
             PantallaReportes = new ReportesViewModel(this);
