@@ -4,10 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1050">
-  
-        <Grid Background="{DynamicResource PrimaryBlueColor}">
+             mc:Ignorable="d" d:DesignWidth="1050" Height="923">
+
+    <Grid Background="{DynamicResource PrimaryBlueColor}">
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Grid Height="930">
 
@@ -15,25 +14,14 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                             <StackPanel>
-                                <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> FECHA INICIO:</TextBlock>
-                                <DatePicker Margin="10,0,0,0" MinWidth="150"></DatePicker>
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> HORA INICIO:</TextBlock>
-                                <TextBox Style="{DynamicResource TextBoxStyle}" Margin="10,0,0,0" Width="150"></TextBox>
-                            </StackPanel>
-                            <StackPanel>
                                 <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> TIPO DE FOLIO:</TextBlock>
                                 <ComboBox Margin="10,0,0,0" MinWidth="180"  
                                 SelectedValuePath="Key"
                                 DisplayMemberPath="Value"
                                 ItemsSource="{Binding Catalogos}"/>
-                                
+
                             </StackPanel>
-                            <StackPanel>
-                                <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> AÑO DE REGISTRO:</TextBlock>
-                                <TextBox Style="{DynamicResource TextBoxStyle}" Margin="10,0,0,0" MinWidth="150"></TextBox>
-                            </StackPanel>
+                           
                             <StackPanel>
                                 <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }">NOMBRE DE QUIEN SOLICITA EL FOLIO:</TextBlock>
                                 <ComboBox Margin="10,0,0,0" MinWidth="150" Height="31" SelectedItem="n" />
@@ -44,8 +32,25 @@
                                 <TextBox Style="{DynamicResource TextBoxStyle}" Margin="10,0,0,0" MinWidth="150"></TextBox>
                             </StackPanel>
                         </StackPanel>
-
-
+                        <!-- Línea de separación horizontal -->
+                        <Separator Margin="10" />
+                        <StackPanel>
+                            <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="INFORMACIÓN RNPDNO:" Margin="10,0,0,0" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> FOLIO FUB:</TextBlock>
+                                <TextBox Style="{DynamicResource TextBoxStyle}" Margin="10,0,0,0" MinWidth="150"></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }"> AUTORIDAD QUE INGRESÓ FUB:</TextBlock>
+                                <TextBox Style="{DynamicResource TextBoxStyle}" Margin="10,0,0,0" MinWidth="150"></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Margin="10,0,0,5" Style="{DynamicResource TabItemContentTextStyle }">ESTATUS DE PERSONA RNPDNO:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="31" />
+                            </StackPanel>
+                        </StackPanel>
                         <!-- Línea de separación horizontal -->
                         <Separator Margin="10" />
                         <StackPanel Orientation="Vertical" HorizontalAlignment="left" Width="720">
@@ -125,6 +130,9 @@
                             </StackPanel>
                             <!-- Línea de separación horizontal -->
                             <Separator Margin="10" />
+                            <StackPanel>
+                                <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="CARPETA DE INVESTIGACIÓN:" Margin="10,0,0,0" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="left" Width="720">
                                 <StackPanel>
                                     <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0"
@@ -174,6 +182,9 @@
                         </StackPanel>
                         <!-- Línea de separación horizontal -->
                         <Separator Margin="10" />
+                        <StackPanel>
+                            <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="AMPARO BUSCADOR:" Margin="10,0,0,0" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="left" Width="720">
                             <StackPanel>
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0">ESPECIFICA SI HAY O EXISTE AMPARO BUSCADOR:</TextBlock>

@@ -91,23 +91,7 @@
                             </StackPanel>
                             
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                           
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">A PARTIR DE LA DESAPARICIÓN O PRIVACIÓN DE LA LIBERTAD DE SU FAMILIAR ¿HA SIDO VÍCTIMA DE EXTORSIÓN O FRAUDE?</TextBlock>
-                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">¿HA RECIBIDO AMENAZAS?</TextBlock>
-                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿SABE DE DÓNDE PROVIENEN?</TextBlock>
-                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
-                            </StackPanel>
-                        </StackPanel>
+                      
                         <!-- Línea de separación horizontal -->
                         <Separator Margin="10"/>
                         <StackPanel>
@@ -274,16 +258,22 @@
                             <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="A PARTIR DE LA DESAPARICIÓN O PRIVACIÓN DE LA LIBERTAD DE SU FAMILIAR…" Margin="10,0,0,0" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">¿PERTENENCIA A ALGÚN GRUPO DE POBLACIÓN VULNERABLE?</TextBlock>
-                                <ComboBox Margin="10,0,0,0" MinWidth="150" />
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">¿HA REALIZADO BÚSQUEDAS CON ANTERIORIDAD?</TextBlock>
+                             <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">¿HA SIDO VÍCTIMA DE EXTORSIÓN O FRAUDE?</TextBlock>
                                 <ComboBox Margin="10,0,0,0" MinWidth="150"></ComboBox>
                             </StackPanel>
                             <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿EN DÓNDE?</TextBlock>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">DESCRIBA BREVEMENTE LA SITUACIÓN</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿HA RECIBIDO AMENAZAS?</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150"></ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">¿SABE DE DÓNDE PROVIENEN?</TextBlock>
                                 <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
                             </StackPanel>
                         </StackPanel>
