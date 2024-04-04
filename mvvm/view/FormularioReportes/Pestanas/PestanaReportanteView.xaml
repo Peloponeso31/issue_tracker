@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas"
-             mc:Ignorable="d" d:DesignWidth="1050" Height="806">
+             mc:Ignorable="d" d:DesignWidth="1050" Height="937">
     <Grid Background="{DynamicResource PrimaryBlueColor}">
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Grid>
@@ -89,20 +89,10 @@
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">OCUPACIÓN:</TextBlock>
                                 <ComboBox Margin="10,0,0,0" MinWidth="150" />
                             </StackPanel>
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">¿PERTENENCIA A ALGUNA MINORÍA?</TextBlock>
-                                <ComboBox Margin="10,0,0,0" MinWidth="150" />
-                            </StackPanel>
+                            
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">¿HA REALIZADO BÚSQUEDAS CON ANTERIORIDAD?</TextBlock>
-                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿EN DÓNDE?</TextBlock>
-                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
-                            </StackPanel>
+                           
                             <StackPanel>
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">A PARTIR DE LA DESAPARICIÓN O PRIVACIÓN DE LA LIBERTAD DE SU FAMILIAR ¿HA SIDO VÍCTIMA DE EXTORSIÓN O FRAUDE?</TextBlock>
                                 <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
@@ -266,12 +256,39 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                             <StackPanel>
-                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap"  Margin="10,0,0,0" Width="220">¿QUÉ LENGUAS HABLA?:</TextBlock>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">¿PERTENENCIA A ALGÚN GRUPO DE POBLACIÓN VULNERABLE?</TextBlock>
                                 <ComboBox Margin="10,0,0,0" MinWidth="150" />
                             </StackPanel>
-
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">¿HA REALIZADO BÚSQUEDAS CON ANTERIORIDAD?</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿EN DÓNDE?</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- Línea de separación horizontal -->
+                        <Separator Margin="10"/>
+                        <StackPanel>
+                            <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="A PARTIR DE LA DESAPARICIÓN O PRIVACIÓN DE LA LIBERTAD DE SU FAMILIAR…" Margin="10,0,0,0" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">¿PERTENENCIA A ALGÚN GRUPO DE POBLACIÓN VULNERABLE?</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" />
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">¿HA REALIZADO BÚSQUEDAS CON ANTERIORIDAD?</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270">¿EN DÓNDE?</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
                         </StackPanel>
                         <Separator Margin="10"/>
+
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                             <StackPanel>
                                 <Button Content="Guardar" Width="719" Height="30" />
