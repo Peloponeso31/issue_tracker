@@ -11,22 +11,37 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 {
     public class PestanaSenasParticularesViewModel : ObservableObject
     {
-		private string _color;
-		public string Color
+		private string _colorRegionCuerpo;
+		public string ColorRegionCuerpo
 		{
 			get
 			{
-				return _color;
+				return _colorRegionCuerpo;
 			}
 			set
 			{
-				_color = value.Substring(3);
-				Debug.WriteLine(_color);
-				OnPropertyChanged(nameof(Color));
+                _colorRegionCuerpo = value.Substring(3);
+				Console.WriteLine($"Color Region: {_colorRegionCuerpo}");
+				OnPropertyChanged();
 			}
 		}
 
-		private Dictionary<string, RegionCuerpo> _regionCuerpo;
+        private string _colorLado;
+        public string ColorLado
+        {
+            get
+            {
+                return _colorLado;
+            }
+            set
+            {
+                _colorLado = value.Substring(3);
+                Console.WriteLine($"Color lado: {_colorLado}");
+                OnPropertyChanged();
+            }
+        }
+
+        private Dictionary<string, RegionCuerpo> _regionCuerpo;
 		public Dictionary<string, RegionCuerpo> RegionCuerpo
 		{
 			get
@@ -40,15 +55,50 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 			}
 		}
 
-		public PestanaSenasParticularesViewModel()
+
+        private Dictionary<string, TipoSenas> _tipoSenas;
+        public Dictionary<string, TipoSenas> TipoSenas
+        {
+            get
+            {
+                return _tipoSenas;
+            }
+            set
+            {
+                _tipoSenas = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Dictionary<string, LadoSenas> _ladoSenas;
+        public Dictionary<string, LadoSenas> LadoSenas
+        {
+            get
+            {
+                return _ladoSenas;
+            }
+            set
+            {
+                _ladoSenas = value;
+                OnPropertyChanged();
+            }
+        }
+        public PestanaSenasParticularesViewModel()
         {
 			CargarCatalogos();
         }
 
-		public async void CargarCatalogos()
-		{
+        public async void CargarCatalogos()
+        {
             var regiones_cuerpo = await HttpClientHandler.GetRegionCuerpo();
-			RegionCuerpo = (Dictionary<string, RegionCuerpo>)regiones_cuerpo;
+            RegionCuerpo = (Dictionary<string, RegionCuerpo>)regiones_cuerpo;
+
+            var tipo = await HttpClientHandler.GetTipo();
+            TipoSenas = (Dictionary<string, TipoSenas>)tipo;
+
+            var lado = await HttpClientHandler.GetLado();
+            LadoSenas = (Dictionary<string, LadoSenas>)lado;
         }
+
     }
 }
