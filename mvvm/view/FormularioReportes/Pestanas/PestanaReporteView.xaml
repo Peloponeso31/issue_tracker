@@ -27,7 +27,7 @@
                                 <ComboBox Margin="10,0,0,0" MinWidth="180"  
                                 SelectedValuePath="Key"
                                 DisplayMemberPath="Value"
-                                ItemsSource="{Binding Catalogos}"/>
+                                ItemsSource="{Binding TiposReportes}"/>
                                 
                             </StackPanel>
                             <StackPanel>

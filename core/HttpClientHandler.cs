@@ -162,19 +162,17 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             return dic;
         }
 
-        public static async Task<object> GetTipoRepor()
+        public static async Task<object> GetTiposReportes()
         {
             using HttpResponseMessage response = await sharedClient.GetAsync($"api/tipos-reportes");
             var jsonResponse = await response.Content.ReadAsStringAsync();
 
-            Catalogos catalogos = JsonSerializer.Deserialize<Catalogos>(jsonResponse);
-            Dictionary<string, CatalogoData> dic = new Dictionary<string, CatalogoData>();
+            TiposReportes tiposReportes = JsonSerializer.Deserialize<TiposReportes>(jsonResponse);
+            Dictionary<int, TipoReporteData> dic = new Dictionary<int, TipoReporteData>();
 
-            foreach (var catalogo in catalogos.data)
+            foreach (var tipoReporte in tiposReportes.data)
             {
-                // Convertimos el id numérico a cadena para la clave del diccionario
-                string idAsString = catalogo.id.ToString();
-                dic.Add(idAsString, catalogo);
+                dic.Add(tipoReporte.id, tipoReporte);
             }
 
             return dic;

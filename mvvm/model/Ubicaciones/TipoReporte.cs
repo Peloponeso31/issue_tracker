@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubicaciones
 {
-    public class CatalogoData
+    public class TipoReporteData
     {
         public int id { get; set; }
         public string nombre { get; set; }
@@ -17,8 +17,8 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubica
         }
     }
 
-    public class Catalogos
+    public class TiposReportes
     {
-        public List<CatalogoData> data { get; set; }
+        public List<TipoReporteData> data { get; set; }
     }
 }
