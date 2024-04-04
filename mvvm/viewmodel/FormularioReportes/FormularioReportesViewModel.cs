@@ -24,7 +24,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
 			set
 			{
                 _pestanaActual = value;
-				OnPropertyChanged(nameof(PestanaActual));
+				OnPropertyChanged();
 			}
 		}
 

@@ -1,0 +1,8 @@
+// @no-log
+GET 187.251.212.146:18080/api/token?email=test@example.com&password=password&token_name=asd
+Content-Type: application/json
+
+//Saving a variable
+> {%
+    client.global.set("auth_token", response.body.data.plain_text_token);
+%}

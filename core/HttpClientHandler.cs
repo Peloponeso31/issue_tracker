@@ -15,6 +15,7 @@ using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObjects.errorObjects;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Informaciones;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubicaciones;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
@@ -129,19 +130,33 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
             return dic;
         }
 
-        public static async Task<Object> GetTipoRepor()
+        public static async Task<object> GetTiposMedios()
         {
-            using HttpResponseMessage response = await sharedClient.GetAsync($"api/tipos-reportes");
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/tipos-medios");
             var jsonResponse = await response.Content.ReadAsStringAsync();
 
-            Catalogos catalogos = JsonSerializer.Deserialize<Catalogos>(jsonResponse);
-            Dictionary<string, CatalogoData> dic = new Dictionary<string, CatalogoData>();
+            TiposMedios tiposMedios = JsonSerializer.Deserialize<TiposMedios>(jsonResponse);
+            Dictionary<int, TipoMedioData> dic = new Dictionary<int, TipoMedioData>();
 
-            foreach (var catalogo in catalogos.data)
+            foreach (var tipoMedio in tiposMedios.data)
             {
-                // Convertimos el id numérico a cadena para la clave del diccionario
-                string idAsString = catalogo.id.ToString();
-                dic.Add(idAsString, catalogo);
+                dic.Add(tipoMedio.id, tipoMedio);
+            }
+
+            return dic;
+        }
+        
+        public static async Task<object> GetMedios()
+        {
+            using HttpResponseMessage response = await sharedClient.GetAsync($"api/medios");
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            Medios medios = JsonSerializer.Deserialize<Medios>(jsonResponse);
+            Dictionary<int, MedioData> dic = new Dictionary<int, MedioData>();
+
+            foreach (var medio in medios.data)
+            {
+                dic.Add(medio.id, medio);
             }
 
             return dic;
