@@ -39,14 +39,14 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.requestObje
     public class ReporteData
     {
         public int id { get; set; }
-        public int tipo_reporte_id { get; set; }
-        public int area_atiende_id { get; set; }
-        public int medio_conocimiento_id { get; set; }
-        public int zona_estado_id { get; set; }
-        public int hipotesis_oficial_id { get; set; }
+        public int? tipo_reporte_id { get; set; }
+        public int? area_atiende_id { get; set; }
+        public int? medio_conocimiento_id { get; set; }
+        public int? zona_estado_id { get; set; }
+        public int? hipotesis_oficial_id { get; set; }
         public string tipo_desaparicion { get; set; }
-        public object fecha_localizacion { get; set; }
-        public object sintesis_localizacion { get; set; }
+        public object? fecha_localizacion { get; set; }
+        public object? sintesis_localizacion { get; set; }
         public object clasificacion_persona { get; set; }
         public List<Reportante> reportantes { get; set; }
         public List<Desaparecido> desaparecidos { get; set; }

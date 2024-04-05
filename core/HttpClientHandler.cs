@@ -177,5 +177,37 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core
 
             return dic;
         }
+
+        public static async Task<object> PostReporte(int tipoReporte_id, int? area_atiende_id = null, int? medio_conocimiento_id = null, int? zona_estado_id = null, int? hipotesis_oficial_id = null, string tipo_desaparicion = "U", object? fecha_localizacion = null, object? sintesis_localizacion = null, object? clasificacion_persona = null)
+        {
+            ReporteData reporteData = new ReporteData
+            {
+                tipo_reporte_id = tipoReporte_id,
+                area_atiende_id = area_atiende_id,
+                medio_conocimiento_id = medio_conocimiento_id,
+                zona_estado_id = zona_estado_id,
+                hipotesis_oficial_id = hipotesis_oficial_id,
+                tipo_desaparicion = tipo_desaparicion,
+                fecha_localizacion = fecha_localizacion,
+                sintesis_localizacion = sintesis_localizacion,
+                clasificacion_persona = clasificacion_persona,
+            };
+
+            string json = JsonSerializer.Serialize(reporteData);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            using HttpResponseMessage response = await sharedClient.PostAsync("api/reportes", content);
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            if ((int) response.StatusCode == 201)
+            {
+                Console.WriteLine("Exito al crear reporte");
+                return null;
+            }
+            
+            Console.WriteLine("Error al crear reporte");
+
+            return null;
+        }
     }
 }
