@@ -18,6 +18,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="mvvm\model\Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="media\images\logo_letras.png" />
