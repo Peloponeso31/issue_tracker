@@ -1,0 +1,275 @@
+﻿<UserControl x:Class="Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas.PestanaPersonaDesaparecidaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas"
+             mc:Ignorable="d">
+    <Grid Background="{DynamicResource PrimaryBlueColor}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Border Background="White" CornerRadius="10" Margin="5,5,10,-14" Padding="10" Grid.ColumnSpan="2">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }"  Margin="10,0,0,0" Width="220">NOMBRE:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }"  Margin="10,0,0,0" Width="220">PRIMER APELLIDO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">SEGUNDO APELLIDO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">APODO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">IDENTIDAD RESGUARDADA:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">INICIALES:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">PSEUDÓNIMO NOMBRE:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">PSEUDÓNIMO PRIMER APELLIDO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">PSEUDÓNIMO SEGUNDO APELLIDO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">SEXO:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">GENERO:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="250" Margin="10,0,0,0">FECHA NACIMIENTO DESAPARECIDO(A):</TextBlock>
+                                <DatePicker Margin="10,0,0,0" MinWidth="150"></DatePicker>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">EDAD:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">EDAD (MESES):</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">EDAD (DÍAS):</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">NACIONALIDAD:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">LUGAR DE NACIMIENTO:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Width="220" Margin="10,0,0,0">RFC:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap" Margin="10,0,0,0" Width="220">CURP:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">OBSERVACIONES RELACIONADAS CON LA CURP:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- Línea de separación horizontal -->
+                        <Separator Margin="10"/>
+                        <StackPanel>
+                            <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="DOMICILIO DE LA PERSONA DESAPARECIDA:" Margin="10,0,0,10" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <StackPanel>
+                                    <StackPanel>
+                                        <RadioButton Content="MISMO DOMICILIO QUE LA PERSONA REPORTANTE" GroupName="GrupoOpciones" Margin="5"/>
+                                        
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">CALLE:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">NO. EXTERIOR:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">NO. INTERIOR:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">COLONIA:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">CODIGO POSTAL:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">ESTADO:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">MUNICIPIO:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">LOCALIDAD:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">ENTRE CALLE:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">Y CALLE:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">TRAMO CARRETERO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">REFERENCIA:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- Línea de separación horizontal -->
+                        <Separator Margin="10"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">TELÉFONO MÓVIL:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">COMPAÑIA</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">OBSERVACIONES DEL NÚMERO:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <!-- Botón para agregar más campos de texto -->
+                                <Button Content="Agregar Teléfono" Command="{Binding AddPhoneNumberCommand}" Margin="5"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+                            <ItemsControl ItemsSource="{Binding PhoneNumbers}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                            <StackPanel>
+                                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }"  Margin="10,0,0,0" Width="220" >TELÉFONO MÓVIL:</TextBlock>
+                                                <TextBox Text="{Binding Type, Mode=TwoWay}" Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="270" >COMPAÑIA</TextBlock>
+                                                <TextBox Text="{Binding Type, Mode=TwoWay}" Margin="10,0,0,0"  ></TextBox>
+                                            </StackPanel>
+
+                                            <StackPanel>
+                                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220" >OBSERVACIONES DEL NÚMERO:</TextBlock>
+                                                <TextBox Text="{Binding Type, Mode=TwoWay}" Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }"  Margin="10,0,0,0" Width="220">REDES SOCIALES:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HABLA ESPAÑOL:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">SABE LEER Y ESCRIBIR:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }"  Margin="10,0,0,0" Width="250">ESCOLARIDAD:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }"  Margin="10,0,0,0" Width="220">ESCOLARIDAD ESTATUS:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">OCUPACIÓN</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150"></ComboBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap"  Margin="10,0,0,0" Width="220">DETALLES DE OCUPACIÓN:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" Height="23"></TextBox>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="250">ESTADO CONYUGAL:</TextBlock>
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Height="23"></ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">NOMBRE DE LA PAREJA O CÓNYUGE:</TextBlock>
+                                <TextBox Margin="10,0,0,0" MinWidth="150" ></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <Separator Margin="10"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel>
+                                <Button Content="Guardar" Width="719" Height="30" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

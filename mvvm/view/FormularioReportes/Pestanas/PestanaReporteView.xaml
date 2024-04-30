@@ -209,6 +209,10 @@
                         </StackPanel>
                         <!-- Línea de separación horizontal -->
                         <Separator Margin="10" />
+                        <StackPanel>
+                            <TextBlock  Style="{DynamicResource TabItemContentTextStyle }" Text="RECOMENDACIÓN DE DERECHOS HUMANOS:" Margin="10,0,0,10" FontWeight="DemiBold" FontSize="12" HorizontalAlignment="Left"/>
+                        </StackPanel>
+
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="left" Width="978">
                             <StackPanel>
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap"

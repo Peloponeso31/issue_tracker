@@ -24,15 +24,15 @@
              Grid.Column="1">
             <Button Content="Reporte" Command="{Binding PestanaReporteRelayCommand}"  Style="{StaticResource MenuItemButton}"/>
             <Button Content="Reportante"  Style="{StaticResource MenuItemButton}" Command="{Binding PestanaReportanteRelayCommand}" />
-            <Button Content="Persona Desaparecida"  Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Media Afiliación"  Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Prenda de Vestir"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Persona Desaparecida" Command="{Binding PestanaPersonaDesaparecidaRelayCommand}" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Media Afiliación"  Command="{Binding PestanaMediaAfilacionRelayCommand}" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Prenda de Vestir" Command="{Binding PestanaPrendaDeVestirRelayCommand}"  Style="{StaticResource MenuItemButton}"/>
             <Button Content="Señas Particulares" Command="{Binding PestanaSenasParticularesRelayCommand}" Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Condiciones de Vulnerabilidad"  Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Información de Desaparición"  Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Localización"  Style="{StaticResource MenuItemButton}"/>
-            <Button Content="Contexto" Style="{StaticResource MenuItemButton}" />
-            <Button Content="Control OGPI" Style="{StaticResource MenuItemButton}" />
+            <Button Content="Condiciones de Vulnerabilidad"  Command="{Binding PestanaCondicionesVulnerabilidadRelayCommand}"  Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Información de Desaparición"   Command="{Binding PestanaHechosDesaparicionRelayCommand}" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Localización"  Command="{Binding PestanaLocalizacionRelayCommand}" Style="{StaticResource MenuItemButton}"/>
+            <Button Content="Contexto"  Command="{Binding PestanaContextoRelayCommand}" Style="{StaticResource MenuItemButton}" />
+            <Button Content="Control OGPI" Command="{Binding PestanaControlOGPIRelayCommand}" Style="{StaticResource MenuItemButton}" />
 
         </WrapPanel>
 

@@ -1150,7 +1150,7 @@
                     </TabItem>
                     <TabItem   Header="Información Desaparición"  Style="{DynamicResource TabItemStyle}" >
                         <Grid>
-                            <Border Background="White" CornerRadius="10" Margin="5,5,3,180" Padding="10">
+                            <Border Background="White" CornerRadius="10" Margin="5,5,3,31" Padding="10">
                                 <StackPanel>
 
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">

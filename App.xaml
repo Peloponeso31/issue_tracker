@@ -69,6 +69,37 @@
                 <ViewsFormularioReportes:PestanaReportanteView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaPersonaDesaparecidaViewModel}">
+                <ViewsFormularioReportes:PestanaPersonaDesaparecidaView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaPrendaDeVestirViewModel}">
+                <ViewsFormularioReportes:PestanaPrendaDeVestirView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaCondicionesVulnerabilidadViewModel}">
+                <ViewsFormularioReportes:PestanaCondicionesVulnerabilidadView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaHechosDesaparicionViewModel}">
+                <ViewsFormularioReportes:PestanaHechosDesaparicionView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaLocalizacionViewModel}">
+                <ViewsFormularioReportes:PestanaLocalizacionView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaContextoViewModel}">
+                <ViewsFormularioReportes:PestanaContexto/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaControlOGPIViewModel}">
+                <ViewsFormularioReportes:PestanaControlOGPIView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModelsFormularioReportes:PestanaMediaAfilacionViewModel}">
+                <ViewsFormularioReportes:PestanaMediaAfilacionView/>
+            </DataTemplate>
         </ResourceDictionary>
         
     </Application.Resources>

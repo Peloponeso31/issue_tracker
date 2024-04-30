@@ -31,6 +31,8 @@
     <Resource Include="media\images\senas\RegionCuerpoColorMejorado.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.3" />
@@ -41,6 +43,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.3" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="WPF-UI" Version="3.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="mvvm\model\General.cs" />

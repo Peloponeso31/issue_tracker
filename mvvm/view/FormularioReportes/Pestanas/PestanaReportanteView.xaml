@@ -43,7 +43,7 @@
                             </StackPanel>
                             <StackPanel>
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,5" Width="220">FECHA NACIMIENTO DEL REPORTANTE:</TextBlock>
-                                <TextBox Margin="10,0,0,0" MinWidth="150" Style="{DynamicResource TextBoxStyle}" Width="220" ></TextBox>
+                                <DatePicker Margin="10,0,0,0" MinWidth="150"></DatePicker>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,5">
@@ -218,7 +218,7 @@
                             </StackPanel>
                             <StackPanel>
                                 <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,5" Width="220">ESCOLARIDAD:</TextBlock>
-                                <ComboBox Margin="10,0,0,0" MinWidth="150" Style="{DynamicResource ComboBoxStyle1}" />
+                                <ComboBox Margin="10,0,0,0" MinWidth="150" Style="{DynamicResource ComboBoxStyle1}" Height="30" />
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,5">
@@ -287,7 +287,7 @@
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20">
                             <StackPanel>
-                                <Button Content="Guardar" Width="952" Height="34"/>
+                                <Button Content="GUARDAR" Style="{StaticResource GuardarButtonStyle}" Width="952" Height="34"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
