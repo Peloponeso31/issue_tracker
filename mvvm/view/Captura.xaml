@@ -1150,7 +1150,7 @@
                     </TabItem>
                     <TabItem   Header="Información Desaparición"  Style="{DynamicResource TabItemStyle}" >
                         <Grid>
-                            <Border Background="White" CornerRadius="10" Margin="5,5,3,180" Padding="10">
+                            <Border Background="White" CornerRadius="10" Margin="5,5,3,31" Padding="10">
                                 <StackPanel>
 
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -1433,6 +1433,37 @@
                                         <StackPanel>
                                             <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0" Width="220">HIPERVÍNCULO SÍNTESIS DE LOCALIZACIÓN:</TextBlock>
                                             <TextBox Margin="10,0,0,0" MinWidth="150"  ></TextBox>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="left" Width="720">
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" Margin="10,0,0,0">
+             NUEVA LOCALIZACIÓN:
+                                            </TextBlock>
+                                            <DatePicker Margin="10,0,0,0" MinWidth="150"></DatePicker>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap"
+                    Margin="10,0,0,0" Width="220">
+             ESTATUS CONOCIDO DE LA PERSONA DESAPARECIDA O NO LOCALIZADA:
+                                            </TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="150">
+                                                <!-- Agregar elementos al ComboBox -->
+                                                <ComboBoxItem Content="SI" />
+                                                <ComboBoxItem Content="NO" />
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel>
+                                            <TextBlock Style="{DynamicResource TabItemContentTextStyle }" TextWrapping="Wrap"
+                    Margin="10,0,0,0" Width="220">
+             ESTATUS DE LA PERSONA DESAPARECIDA O NO LOCALIZADA:
+                                            </TextBlock>
+                                            <ComboBox Margin="10,0,0,0" MinWidth="150">
+                                                <!-- Agregar elementos al ComboBox -->
+                                                <ComboBoxItem Content="SI" />
+                                                <ComboBoxItem Content="NO" />
+                                            </ComboBox>
                                         </StackPanel>
                                     </StackPanel>
 

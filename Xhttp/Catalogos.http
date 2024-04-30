@@ -1,4 +1,4 @@
 // @no-log
-GET 187.251.212.146:18080/api/medios
+GET 187.251.212.146:18080/api/reportes
 Content-Type: application/json
 Authorization: Bearer {{auth_token}}

@@ -1,33 +1,36 @@
-﻿using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
-using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.FormularioReportes.SenasParticulares;
+﻿using System;
+using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Ubicaciones;
-using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.model.Informaciones;
+using static Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.core.HttpClientHandler;
 
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.FormularioReportes.Pestanas
 {
     class PestanaReporteViewModel : ObservableObject
     {
         private readonly FormularioReportesViewModel _formularioReportesViewModel;
+
+        public RelayCommand GuardarReporteCommand { set; get; }
+
         public PestanaReporteViewModel(FormularioReportesViewModel formularioReportesViewModel)
         {
             this._formularioReportesViewModel = formularioReportesViewModel;
             CargarEstado();
-            CargarTipoRepor();
+            GuardarReporteCommand = new RelayCommand(GuardarReporte);
         }
 
+        private async void GuardarReporte(object o)
+        {
+            await PostReporte(TipoReporteSelecionado.Value.id, medio_conocimiento_id: MedioSeleccionado.Value.id);
+        }
+        
         private Dictionary<string, EstadoData> _estados;
+
         public Dictionary<string, EstadoData> Estados
         {
-            get
-            {
-                return _estados;
-            }
+            get { return _estados; }
             set
             {
                 _estados = value;
@@ -39,26 +42,22 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
          * Catalogo de Medios
          */
         private Dictionary<int, TipoMedioData> _tiposMedios;
+
         public Dictionary<int, TipoMedioData> TiposMedios
         {
-            get
-            {
-                return _tiposMedios;
-            }
+            get { return _tiposMedios; }
             set
             {
                 _tiposMedios = value;
                 OnPropertyChanged();
             }
         }
-        
+
         private Dictionary<int, MedioData> _medios;
+
         public Dictionary<int, MedioData> Medios
         {
-            get
-            {
-                return _medios;
-            }
+            get { return _medios; }
             set
             {
                 _medios = value;
@@ -66,37 +65,56 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel.F
             }
         }
 
-        public async void CargarEstado()
+        private Dictionary<int, TipoReporteData> _tiposReportes;
+
+        public Dictionary<int, TipoReporteData> TiposReportes
         {
-            var estados = await HttpClientHandler.GetEstados();
-            Estados = (Dictionary<string, EstadoData>)estados;
-
-            var tiposMedios = await HttpClientHandler.GetTiposMedios();
-            TiposMedios = (Dictionary<int, TipoMedioData>)tiposMedios;
-            
-            var medios = await HttpClientHandler.GetMedios();
-            Medios = (Dictionary<int, MedioData>)medios;
-        }
-
-
-        private Dictionary<string, CatalogoData> _catalogos;
-        public Dictionary<string, CatalogoData> Catalogos
-        {
-            get
-            {
-                return _catalogos;
-            }
+            get { return _tiposReportes; }
             set
             {
-                _catalogos = value;
+                _tiposReportes = value;
                 OnPropertyChanged();
             }
         }
 
-        public async void CargarTipoRepor()
+        private KeyValuePair<int, TipoReporteData> _tipoReporteSeleccionado;
+        public KeyValuePair<int, TipoReporteData> TipoReporteSelecionado
         {
-            var catalogos = await HttpClientHandler.GetTipoRepor();
-            Catalogos = (Dictionary<string, CatalogoData>)catalogos;
+            get { return _tipoReporteSeleccionado; }
+            set
+            {
+                _tipoReporteSeleccionado = value;
+                Console.WriteLine(TipoReporteSelecionado.Value.id);
+                OnPropertyChanged();
+            }
+        }
+        
+        private KeyValuePair<int, MedioData> _medioSeleccionado;
+
+        public KeyValuePair<int, MedioData> MedioSeleccionado
+        {
+            get { return _medioSeleccionado; }
+            set
+            {
+                _medioSeleccionado = value;
+                Console.WriteLine(MedioSeleccionado.Value.id);
+                OnPropertyChanged();
+            }
+        }
+        
+        public async void CargarEstado()
+        {
+            var estados = await GetEstados();
+            Estados = (Dictionary<string, EstadoData>)estados;
+
+            var tiposReportes = await GetTiposReportes();
+            TiposReportes = (Dictionary<int, TipoReporteData>)tiposReportes;
+
+            var tiposMedios = await GetTiposMedios();
+            TiposMedios = (Dictionary<int, TipoMedioData>)tiposMedios;
+
+            var medios = await GetMedios();
+            Medios = (Dictionary<int, MedioData>)medios;
         }
     }
 }

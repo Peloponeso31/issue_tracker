@@ -43,7 +43,7 @@ namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.viewmodel
 
         private async void CargarAsync()
         {
-            Reportes = await HttpClientHandler.GetReportes();
+            //Reportes = await HttpClientHandler.GetReportes();
         }
     }
 }

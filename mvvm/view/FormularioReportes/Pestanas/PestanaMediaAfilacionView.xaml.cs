@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Comisión_Estatal_de_Búsqueda_del_Estado_de_Veracruz.mvvm.view.FormularioReportes.Pestanas
 {
     /// <summary>
-    /// Lógica de interacción para PestanaReportanteView.xaml
+    /// Lógica de interacción para PestanaMediaAfilacionView.xaml
     /// </summary>
-    public partial class PestanaReportanteView : UserControl
+    public partial class PestanaMediaAfilacionView : UserControl
     {
-        public PestanaReportanteView()
+        public PestanaMediaAfilacionView()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
